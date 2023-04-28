@@ -1,316 +1,65 @@
-Would you please evaluate the transcript I provide for its key terms, ideas, concepts and their defintions. Would you also please include the video title “Python Functions”, the subsection title "Python Introduction", and the section title "Python Fundamentals"?
 
-0:00
-(upbeat music)
-0:04
-- (Announcer) Now that we've covered loops,
-0:06
-let's move on to defining our own functions.
-0:09
-So just like in JavaScript,
-0:10
-we write a ton of functions in Python
-0:13
-and the syntax is slightly different
-0:15
-and the syntax is definitely a little bit different,
-0:18
-but most of the concepts are exactly the same.
-0:21
-So we don't have a function keyword
-0:23
-like we do in Java script.
-0:25
-We don't have curly braces, like everything else in Python.
-0:27
-It depends on indentation,
-0:29
-but we do define a function name some identifier,
-0:33
-typically the same pattern for variables
-0:35
-that we've seen before
-0:37
-where we use the conventional lower snake case underscores.
-0:40
-Unlike camel case in JavaScript,
-0:41
-we have parenthesis and we define a list of parameters
-0:46
-and then we have our colon.
-0:48
-So let's try one out very simple.
-0:50
-Let's define a function, which is what Def means.
-0:54
-Also I'm in a new file functions dot P Y Def greet nice
-1:00
-and easy, and let's have it accept a person.
-1:06
-And then we will print.
-1:08
-Or should we just return?
-1:09
-Let's do a return, an F string.
-1:12
-Remember that from earlier a formatted string.
-1:15
-Hello there, comma and then curly braces person.
-1:20
-And that's it.
-1:21
-So we have a return keyword.
-1:23
-We have Def, and then we indent any code that belongs inside
-1:27
-of this function.
-1:28
-And then to execute it, it's just
-1:30
-like what we do in Java script, greet and then parentheses.
-1:35
-So I'm going to run this file
-1:37
-and I Python and then call it from I Python.
-1:41
-So percent run functions dot py
-1:46
-doesn't look like anything happened
-1:47
-but that's because we never executed greets.
-1:50
-So now if I call greets with parentheses
-1:52
-and a name like a Thomas,
-1:56
-we get hello there Thomas.
-1:58
-If I call it with Ruby, hello there, Ruby.
-2:03
-Okay. So that's our very first simple function in Python.
-2:07
-It's important to note that if you do not explicitly return
-2:10
-to some value, a function will return.
-2:13
-None, which we saw earlier, the value none.
-2:16
-So if we'd had something like a
-2:19
-well, if I just changed this to print,
-2:22
-if I print that F string, instead,
-2:25
-I'm not returning anything
-2:26
-from Greet going to rerun that file
-2:29
-and then call greet Ruby.
-2:31
-We get hello there, Ruby.
-2:33
-But if I were to save the return value,
-2:35
-like let's just go with return Val
-2:39
-equals greet Charles like that.
-2:44
-If we look at type of return, Val,
-2:48
-we'll see, it is none type.
-2:50
-So the value inside of this variable is none
-2:53
-because we returned nothing just like in JavaScript
-2:57
-how we would get undefined when we don't return a value
-3:00
-from a function.
-3:01
-Although there is a slight difference there
-3:04
-pythons none is closer to the concept of no
-3:07
-and JavaScript rather than undefined.
-3:09
-Anyway, if you don't explicitly return a value
-3:11
-from your function, it will return none.
-3:14
-So just like in JavaScript,
-3:17
-we have as many parameters as we want.
-3:19
-The order definitely matters.
-3:21
-If we defined another function
-3:23
-let's call this one multiply.
-3:25
-Or how about divide?
-3:26
-We'll do divide,
-3:30
-which accepts an a and b.
-3:32
-And we'll return
-3:35
-a divided by b.
-3:39
-If I call it,
-3:41
-by first running that file, where are you?
-3:43
-Here we go.
-3:44
-And I call divided with one and two.
-3:48
-We get 0.5.
-3:49
-And just like in JavaScript, if we do it the other way
-3:52
-we get two divided by one, which is 2.0, alright.
-3:56
-So that all make sense hopefully.
-3:58
-Why don't we add a couple more lines to divide
-4:01
-just so that we know
-4:02
-for sure that we can have multiple line functions so far
-4:05
-they've all been one-liners
-4:07
-why don't we add some simple type checking
-4:10
-which honestly is not very pythonic
-4:12
-that's something we'll talk about later.
-4:14
-Usually in Python, you don't really care about types.
-4:18
-You just assume something will work
-4:20
-and if it doesn't work, then you handle it with errors.
-4:22
-We haven't talked about any of that stuff.
-4:24
-So let's just check if a and b are numbers.
-4:27
-We'll just write some code
-4:28
-along the lines of if a and b are numbers.
-4:32
-It's not valid JavaScript.
-4:33
-It's not that far off, but not quite.
-4:36
-If they are, we'll do this
-4:38
-otherwise we'll return some sort of error string.
-4:42
-So to check type, we have a couple options.
-4:45
-The simplest one will do that we've seen
-4:47
-before is just type.
-4:49
-And then it's a type function.
-4:50
-We pass in some value
-4:52
-and it returns to us, not as string,
-4:55
-like in JavaScript, we would do type
-4:57
-of something.
-4:58
-And it's not a function
-4:59
-but type of three would give us the string number.
-5:03
-That's not how pythons type works.
-5:06
-Instead We would check type three equals
-5:09
-or is Int, not the string int,
-5:13
-but just int.
-5:15
-And that gives us true.
-5:16
-If we tried that with a float that gives us false.
-5:20
-So for now, we'll just assume everything is an integer
-5:23
-for this divide function.
-5:25
-So in here we could write
-5:27
-If a or type of a rather
-5:31
-is and then int
-5:34
-and mixing up JavaScript again, not those ampersands
-5:38
-but we want the word and yeah, type b is int.
-5:43
-Then return a divided by b.
-5:47
-And we could add an else and do something else
-5:49
-but just like in JavaScript, a return statement instead
-5:52
-of a Python function will halt execution.
-5:56
-It will end the function's execution.
-5:59
-So down here, we can just return something without the ELLs.
-6:03
-Why don't we just return a string
-6:05
-that says a and b must be integers.
-6:08
-So we are ignoring floats.
-6:10
-We're not allowing floats at this point.
-6:12
-Let's make sure it works.
-6:14
-So if we run that file again
-6:16
-and we tried divide one divided by five, that works fine.
-6:22
-But if we do one divided by a,
-6:24
-a and b must be integers, okay.
-6:27
-So simple functions still,
-6:29
-but at least now we have a couple a different lines.
-6:32
-Everything has to be indented properly as always in Python.
-6:35
-All of this code is part of the function body
-6:38
-because it's indented below that function.
-6:41
-And inside of this conditional
-6:43
-we have another indentation that associates this line
-6:46
-with that conditional, this is very different from that.
-6:50
-So very important.
-6:51
-We follow those rules of indentation.
-6:54
-Okay, so next we're gonna talk a bit more
-6:56
-about arguments in Python and how they work
-7:00
-and how it's slightly different than Java script.
-7:02
-There are some nice features that's coming up next.
-7:05
-(upbeat music)
+
+Title: Python Functions
+Section Title: Python Fundamentals
+Subsection Title: Python Introduction
+
+Key Terms/Ideas/Concepts:
+- Functions
+- Syntax
+- Parameters
+- Return
+- None
+- Type Checking
+- Indentation
+- Arguments
+- Type Function
+- Integers
+- Floats
+- Conditional Statements
+- Function Body
+
+Definitions:
+- Functions: A set of instructions that can be called and executed multiple times throughout a program.
+- Syntax: A set of rules that define how code should be written in a programming language.
+- Parameters: Inputs that are defined when a function is declared and can be passed in when the function is called.
+- Return: The value or values that a function outputs after being executed.
+- None: A built-in Python object that represents the absence of a value or null value.
+- Type Checking: A process of verifying the data type of a value or object.
+- Indentation: The use of whitespace at the beginning of a line of code to denote its level of hierarchy or association with a particular block of code.
+- Arguments: Values that are passed into a function when it is called.
+- Type Function: A built-in Python function that returns the type of a given value or object.
+- Integers: Whole numbers in Python without any decimal places.
+- Floats: Decimal numbers in Python.
+- Conditional Statements: Statements that execute different code depending on whether a certain condition is true or false.
+- Function Body: The block of code within a function that is executed when the function is called.
+
+
+
+Sure! Here's an example code that demonstrates Python functions and their usage:
+
+```python
+# Define a function that greets a person
+def greet(person):
+    return f"Hello there, {person}!"
+
+# Call the greet function
+print(greet("Thomas"))  # Output: Hello there, Thomas!
+
+# Define a function that divides two integers
+def divide(a, b):
+    if isinstance(a, int) and isinstance(b, int):
+        return a / b
+    else:
+        return "a and b must be integers."
+
+# Call the divide function
+print(divide(1, 2))  # Output: 0.5
+print(divide(2, 1))  # Output: 2.0
+print(divide(1, "2"))  # Output: a and b must be integers.
+```
+
+In this code, we define two functions: `greet()` and `divide()`. The `greet()` function takes a person's name as input and returns a greeting message, while the `divide()` function takes two integers as input and returns their quotient. 
+
+We then call these functions with different arguments to demonstrate their usage. Note that the `isinstance()` function is used to check the type of the input arguments in the `divide()` function, and return an error message if they are not integers.
+

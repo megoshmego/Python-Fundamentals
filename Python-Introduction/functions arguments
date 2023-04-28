@@ -1,536 +1,67 @@
-Would you please evaluate the transcript I provide for its key terms, ideas, concepts and their defintions. Would you also please include the video title “Function arguments”, the subsection title "Python Introduction", and the section title "Python Fundamentals"?
+The key terms, ideas, and concepts in this transcript are:
 
-0:00
-(upbeat guitar music)
-0:04
-- [Instructor] Next up,
-0:05
-let's talk a bit more about arguments
-0:06
-and how they work in Python.
-0:08
-One of the key differences
-0:09
-between JavaScript function arguments
-0:12
-and Python function arguments
-0:13
-is that in JavaScript,
-0:15
-we can omit or add too many arguments
-0:18
-and there's no errors, no issues.
-0:21
-If we omit an argument it's set to undefined.
-0:24
-In Python, that is problematic.
-0:27
-So for example, if we have this divide function
-0:30
-well, let's do an even simpler one,
-0:32
-let's just do some function called three_things,
-0:37
-and it accepts a, b, and c,
-0:40
-and it doesn't even matter what we do in here.
-0:42
-Let's just print HII.
-0:45
-And if we run three_things,
-0:48
-by first running that file,
-0:50
-three_things and I pass in three things,
-0:53
-everything should be good.
-0:54
-But if I pass in two things only, we get an error.
-0:58
-It tells me I'm missing one required positional argument, c.
-1:03
-So arguments are required by default, unlike in JavaScript,
-1:07
-where we can just skip c if we wanted to,
-1:10
-and if we're using c in the function
-1:12
-it could cause problems,
-1:13
-the value would be undefined,
-1:15
-but we don't have to specify it.
-1:17
-The language doesn't actually care.
-1:19
-Same thing if I left off two arguments,
-1:22
-we're now missing two required positional arguments.
-1:24
-We get a full-blown error.
-1:27
-And same thing here.
-1:29
-So that's an important distinction.
-1:31
-And if we instead had done one, two, three
-1:33
-and we pass in four,
-1:35
-we get a different error,
-1:36
-still a type error but it says,
-1:38
-"three_things takes three positional arguments
-1:41
-but four were given."
-1:43
-So it doesn't want you to add in additional arguments
-1:46
-In JavaScript that's fine,
-1:47
-you won't be able to use that fourth argument
-1:50
-unless you are collecting additional arguments,
-1:52
-but that's not something that we've even gotten into
-1:54
-with Python yet.
-1:56
-So in Python, if you do pass in additional arguments
-2:00
-it freaks out at you.
-2:01
-You get an error.
-2:03
-With that said, there are some really nice things
-2:05
-we can do with arguments in Python.
-2:07
-To illustrate this,
-2:08
-I'm gonna define a function called send_email
-2:11
-which won't actually send an email.
-2:13
-And it will require a to_email,
-2:16
-a from_email, a subject, what else,
-2:21
-a cc line, maybe bcc,
-2:24
-and, I guess, a body.
-2:28
-So quite a few different arguments.
-2:30
-It's pretty annoying and difficult
-2:32
-to always remember the exact signature
-2:35
-of a function like this,
-2:36
-where you have to pass in, if I'm calling it
-2:39
-let's just say it does something,
-2:40
-right now it doesn't.
-2:42
-I would have to call send_email
-2:43
-and just remember that I need to pass in to_email first,
-2:47
-so that would be,
-2:48
-let's say I'm sending this to blue@cat.com
-2:54
-and then the from_email will be from colt@human.com,
-2:59
-the subject will be meow, cc,
-3:02
-bcc, I don't know, we'll set those to something,
-3:05
-but the point is it gets annoying
-3:07
-to remember that exact order.
-3:10
-But Python gives us a way
-3:12
-where we don't have to care about the order.
-3:14
-We can use what are called named arguments
-3:17
-or keyword arguments
-3:18
-where we use the name of that argument
-3:21
-and we pass it in where the order doesn't matter,
-3:25
-so I could do subject, and this is what it looks like,
-3:28
-equals, let's go with meow.
-3:32
-to_email equals and then blue@gmail.com.
-3:39
-So here I'm passing these in
-3:41
-where the order is totally mixed up,
-3:43
-but I'm passing them in by name,
-3:45
-and Python knows to expect to_email,
-3:48
-from_email, subject, cc, bcc, and body.
-3:51
-It doesn't care about the order
-3:53
-if we use this method.
-3:55
-Now, if we just pass them in like this,
-3:58
-then of course to_email will be set to the first argument,
-4:01
-from_email will be the second argument.
-4:04
-So why don't we fill out
-4:05
-the body of our function a bit more?
-4:07
-Why don't we make a multiline string?
-4:09
-So we'll go with email equals some big string,
-4:15
-let's do a multiline string here.
-4:20
-We'll just format it like this:
-4:22
-to, I'll make this an f-string,
-4:26
-to_email,
-4:27
-and then we'll have from, from_email,
-4:34
-then we'll have subject, subject,
-4:39
-why don't we just get rid of CC and BCC
-4:41
-to make my life easier,
-4:42
-and then we'll have the email body.
-4:45
-So we'll have an extra return,
-4:46
-maybe even like a, a line here,
-4:52
-and then body will be set to body.
-4:56
-Okay, so that's our email string,
-4:58
-and then we'll print the email.
-5:02
-We're not actually sending an email, of course,
-5:04
-but let's see how it works.
-5:05
-So we'll pass in Subject is MEOW,
-5:07
-to_email is blue@gmail.com,
-5:12
-and then we'll have from_email,
-5:14
-which will be set to colt@humans.com,
-5:18
-and then we also have body,
-5:21
-which will be set to "Hi blue, You are my cat.
-5:27
-I love you."
-5:29
-Okay.
-5:30
-So here is my function call.
-5:32
-Totally mixed up the order,
-5:34
-I can't remember what goes first,
-5:35
-what goes second, What goes third and fourth,
-5:37
-And some functions we'll run into
-5:39
-might even accept more than four arguments.
-5:42
-It can be difficult to remember that order.
-5:44
-So we can pass them in by name.
-5:45
-Let's verify that it works though.
-5:47
-So I'm going to run this,
-5:50
-and there we go,
-5:50
-to is blue@gmail.com,
-5:52
-from: colt@humans.com,
-5:54
-subject: MEOW,
-5:55
-body: "Hi blue, you are my cat.
-5:57
-I love you."
-5:58
-So I could totally move this around,
-6:00
-I could put body first,
-6:04
-and then subject, to_email, from_email,
-6:07
-it should still work fine,
-6:09
-and it does, we get the exact same thing.
-6:11
-But we do have to have those names exactly right.
-6:14
-If I instead had to_email as one word
-6:18
-and I tried running it, now we get an error:
-6:20
-"got an unexpected keyword argument 'toemail'".
-6:24
-To email.
-6:25
-And in addition, if I just leave one of them off entirely,
-6:31
-try running it again,
-6:32
-we get the same problem from before,
-6:34
-"missing one required argument 'to_email'",
-6:38
-So we still have to have them all there,
-6:39
-Python does care about that,
-6:41
-but we don't have to know the exact order
-6:43
-if we are using these keyword arguments.
-6:47
-Okay, so that's the first thing
-6:49
-about Python arguments that I think is pretty nice,
-6:52
-and if you're ever wondering what the arguments are
-6:55
-that a certain function is expecting,
-6:57
-there is a built-in function called help,
-7:00
-and I can pass in a function like send_email,
-7:03
-I don't execute, send_email, I just pass it in,
-7:07
-and it gives me the signature of that function.
-7:10
-to_email, from_email, subject, and body.
-7:13
-I can hit Q to get out of this, by the way,
-7:15
-and we'll see later on how we can add in more information
-7:19
-so that a developer could, could learn more
-7:21
-about how to, how a function works
-7:23
-when they use help,
-7:24
-but for now it's just a nice way
-7:26
-to see the signature of a function.
-7:28
-All right, So that is keyword arguments or named arguments.
-7:32
-Another thing we haven't talked about yet
-7:34
-is adding in default values for arguments.
-7:37
-So just like in JavaScript where we can use this syntax
-7:41
-let's go with function, I don't know, power,
-7:46
-which accepts an x and a y,
-7:48
-and if we want the default power
-7:49
-to be to square something,
-7:52
-we can use the equal sign here.
-7:53
-So we'll raise x to the y power,
-7:56
-we can have Y default to 2,
-7:58
-and then if a user or someone calls power
-8:01
-and only passes in one value, Y will have a default value.
-8:06
-So we can do the exact same thing in Python.
-8:08
-If I defined a function called power
-8:12
-which will accept some num and then a power,
-8:16
-and it will return num ** power.
-8:21
-So if we have two to the third
-8:23
-we get eight, this number raised to the third power.
-8:28
-So very simple, we already have this operator.
-8:31
-There's also a built-in power function
-8:33
-but let's just say, we want to do this.
-8:35
-I can have power default to two
-8:37
-if I want it to square something.
-8:40
-So now, when I call power,
-8:42
-which I'll first run my file,
-8:45
-I'll call power of four to the third, we get 64,
-8:50
-if I just pass in four, we get 16,
-8:52
-which is four squared.
-8:54
-it's kind of odd for it to default to squaring something,
-8:57
-probably should just default
-8:58
-to raising it to the first power, who knows,
-9:01
-but there we go.
-9:02
-We've got a default value.
-9:04
-So now we can leave off an argument.
-9:06
-Whereas before, unlike JavaScript,
-9:09
-if you leave off an argument that Python is expecting,
-9:13
-we get an error,
-9:14
-it tells us that is a required argument called power.
-9:18
-Now, if we just have it default
-9:20
-to something, we can avoid that issue.
-9:22
-And just like with JavaScript, the order matters
-9:26
-you don't want to put a default argument first
-9:29
-if for some reason we wanted num to default to one,
-9:33
-and I just left it like this, and we tried to call it,
-9:38
-you can see, I get an error:
-9:39
-"non-default argument follows default argument".
-9:43
-So when we call this,
-9:45
-(tapping)
-9:46
-Python does not like us doing that,
-9:48
-which makes sense.
-9:49
-We can't have a default value
-9:51
-for an argument before required arguments.
-9:54
-So we need to make sure the default values come
-9:56
-at the end of the parameter list.
-9:59
-Okay, so that's pretty much it,
-10:00
-for now, at least, around function arguments.
-10:03
-Some of the key differences to highlight:
-10:05
-one, Python cares about those arguments.
-10:08
-If you have too few, or you have too many,
-10:10
-it will throw an error.
-10:12
-Unlike JavaScript that just lets it go on by
-10:14
-if you are missing one of these, a or b, it will tell you.
-10:18
-If you pass in an extra argument it will get mad at you.
-10:22
-We also saw that we can have
-10:24
-optional values for our arguments.
-10:27
-I'm going to go back and fix this
-10:29
-so we don't get an error anymore.
-10:30
-Power is back to two.
-10:32
-And we saw that we can pass in
-10:34
-arguments based off of names,
-10:37
-the names of those parameters,
-10:38
-where the order no longer matters.
-10:40
-And this is actually pretty common in Python,
-10:43
-especially once we get to some other
-10:46
-fancy syntax we haven't seen yet.
-10:48
-We will see it later on in the course.
-10:51
-There are other ways of enhancing our functions,
-10:53
-and specifically the way that the arguments work
-10:56
-but we haven't gotten there yet,
-10:58
-so for now, these keyword arguments are a great option
-11:01
-when you're passing in a bunch of values
-11:03
-and you don't know the order,
-11:04
-you just pass them in by name.
-11:06
-And that is something we cannot do in JavaScript.
-11:09
-The closest thing I guess in JavaScript would be
-11:11
-just to pass in an object with key value pairs,
-11:14
-and your function would accept a single object.
-11:17
-But this is different.
-11:18
-Here, these are each individual arguments.
-11:21
-The order doesn't matter because
-11:23
-we use the name of that argument.
-11:25
-- Alrighty.
-11:27
-(upbeat guitar music)
+- Function arguments: values passed to a function when calling it.
+- Python Introduction: the section of the tutorial/course that covers basic concepts of the Python programming language.
+- Python Fundamentals: the overarching section of the tutorial/course that covers the fundamental concepts of the Python programming language.
+- JavaScript function arguments: how function arguments work in the JavaScript programming language.
+- Python function arguments: how function arguments work in the Python programming language.
+- Omit: to leave out or exclude something.
+- Undefined: a value in JavaScript that means a variable has been declared but has no assigned value.
+- Problematic: something that causes problems or difficulties.
+- Divide function: a function that divides two numbers.
+- Required positional argument: an argument that must be provided when calling a function in its correct position.
+- Type error: an error that occurs when an operation or function is applied to the wrong data type.
+- Additional arguments: arguments that are not required by the function but can be provided.
+- Keyword arguments: a way of passing arguments to a function using the name of the parameter.
+- Named arguments: an alternative term for keyword arguments.
+- Default values: values that a function argument will take if no value is provided when calling the function.
+- Syntax: the rules that govern how words and symbols can be combined to form a sentence or expression in a programming language.
+- Signature of a function: the list of arguments that a function accepts, along with their names and data types.
+- Help: a built-in function in Python that provides information about a module, function, class, or method.
+- Multiline string: a string that spans multiple lines of code.
+- F-string: a string that allows for the inclusion of expressions within string literals by prefixing the string with the letter "f".
+- Operator: a symbol or keyword that performs a specific mathematical or logical operation.
+- Non-default argument: an argument that does not have a default value and must be provided when calling a function.
+- Default argument: an argument that has a default value and can be omitted when calling a function.
+
+The video title is "Function arguments," the subsection title is "Python Introduction," and the section title is "Python Fundamentals."
+
+
+Sure! Here's an example Python code for training a simple feedforward neural network using Keras with TensorFlow backend:
+
+```python
+import numpy as np
+from keras.models import Sequential
+from keras.layers import Dense
+
+# generate some sample data
+x_train = np.random.random((1000, 10))
+y_train = np.random.randint(2, size=(1000, 1))
+
+# define the model architecture
+model = Sequential()
+model.add(Dense(64, activation='relu', input_dim=10))
+model.add(Dense(1, activation='sigmoid'))
+
+# compile the model with binary crossentropy loss and adam optimizer
+model.compile(loss='binary_crossentropy',
+              optimizer='adam',
+              metrics=['accuracy'])
+
+# train the model
+model.fit(x_train, y_train, epochs=20, batch_size=128)
+
+# evaluate the model on test data
+x_test = np.random.random((100, 10))
+y_test = np.random.randint(2, size=(100, 1))
+score = model.evaluate(x_test, y_test, batch_size=128)
+print("Test loss:", score[0])
+print("Test accuracy:", score[1])
+```
+
+In this code, we first generate some random training and test data using NumPy. Then we define the architecture of the neural network, which consists of an input layer, a hidden layer with 64 neurons and ReLU activation, and an output layer with sigmoid activation for binary classification. We compile the model with binary crossentropy loss and Adam optimizer, and then train the model using the `fit` method. Finally, we evaluate the model on test data using the `evaluate` method.
+
+This is just a simple example, but it should give you an idea of how to train a feedforward neural network using Keras. Of course, there's a lot more to deep learning than this, but this is a good starting point for beginners. Good luck with your studies!
+
+
+
