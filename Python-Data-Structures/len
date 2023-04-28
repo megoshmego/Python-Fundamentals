@@ -1,0 +1,31 @@
+Video Title: "len"
+Section Title: "Python Introduction"
+Subsection Title: "Python Data Structures"
+
+Key Terms/Ideas/Concepts:
+- Python basics: strings, ints, floats, booleans, lists, conditionals, loops, and functions
+- Data Structures in Python: lists, strings, dictionaries, tuples, sets
+- Built-in data structures in Python 
+- The use of double underscore methods in Python
+- len function in Python for finding the length of an object
+- Differences between Python and JavaScript in finding the length of an object
+
+
+
+Certainly! Here's some example code demonstrating the concepts discussed in the video:
+
+```python
+# Example of using len() with a string
+string = "hello world"
+string_length = len(string)
+print(string_length)  # Output: 11
+
+# Example of using len() with a list
+my_list = ["apple", "banana", "orange", "grape"]
+list_length = len(my_list)
+print(list_length)  # Output: 4
+```
+
+In the above code, we create a string and a list, and use the `len()` function to find the length of each data structure. We then print out the length to the console. 
+
+Note that the `len()` function can be used with other data structures as well, such as dictionaries and sets.

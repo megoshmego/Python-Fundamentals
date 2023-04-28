@@ -1,0 +1,397 @@
+can you please provide code for demonstrations of this
+that would be helpful in preparing for 
+my career as a deep learning AI SWE?
+
+
+
+Would you please evaluate the transcript I provide for its key terms, ideas, 
+concepts and their defintions. Would you also please include the video title 
+“strings continued”, the subsection title "Python Data Structures", 
+and the section title "Python Introduction"?
+
+0:00
+(soft music)
+0:04
+- [Instructor] Next up, we're going to talk
+0:05
+a bit more about strings.
+0:07
+We saw the basics of strings a couple videos ago.
+0:10
+But we're going to dive more into the methods
+0:12
+and some of the useful things
+0:14
+that we can do with strings.
+0:16
+First, let's quickly recap what we've seen before.
+0:18
+Strings are sequences of characters,
+0:20
+just like in JavaScript between quotation marks,
+0:23
+they are immutable.
+0:25
+Now we'll get back to that in a moment.
+0:27
+But as we've seen before,
+0:28
+we can use double quotes,
+0:29
+we can use single quotes.
+0:31
+And unlike JavaScript,
+0:32
+we can use triple quotes.
+0:33
+And this is most commonly used in two scenarios.
+0:36
+One is when you want a multiple line string,
+0:39
+and you want to be able to type it exactly
+0:41
+as it should look.
+0:42
+And then it will be turned into just a regular old string
+0:45
+with some new lines and tab characters
+0:47
+and whatever else thrown in.
+0:49
+But the second situation is when we create doc strings
+0:52
+for functions or classes,
+0:53
+as we learned a couple videos ago,
+0:56
+then we have F strings,
+0:58
+which allow us to create formatted strings,
+1:00
+they're just,
+1:01
+they're similar to string template literals in JavaScript,
+1:04
+so we prefix it with an F,
+1:05
+and then quotes,
+1:07
+and then whatever we have inside of that string,
+1:09
+we can interpolate expressions using curly braces.
+1:14
+So that's a really important thing we do all the time,
+1:16
+just go over this one more time,
+1:18
+we can make a price
+1:20
+and set that equal to I don't know, 350
+1:23
+and a quantity will be seven.
+1:26
+And then we could print an F string,
+1:30
+where we multiply price times quantity,
+1:33
+and we say your total is,
+1:36
+and we'll add dollar sign there,
+1:37
+this is different than JavaScript,
+1:38
+we don't need that dollar sign,
+1:40
+that's purely decorative.
+1:42
+We just need curly braces,
+1:43
+and we'll put price times quantity.
+1:48
+And we get your total is 24.5.
+1:50
+We put the dollar sign back there,
+1:52
+so that we end up with a price.
+1:54
+Okay, so that's F strings,
+1:56
+we can also do F strings on single quotes,
+1:58
+as well as triple quoted strings,
+2:00
+we can have multiple expressions in there.
+2:03
+That's pretty much it.
+2:04
+We also can turn things that are not strings into strings
+2:07
+by using the string STR constructor function.
+2:10
+So if I had a number of how about 5.6,
+2:15
+as a float,
+2:16
+turned it into a string,
+2:17
+it just puts quotes around it,
+2:18
+we can do this with a list.
+2:20
+So I could have three, four, or five,
+2:22
+and save that to a variable, call this nums.
+2:26
+If I do STR of nums,
+2:28
+we get three, four, or five as a string.
+2:32
+Next, we've seen that we can use in on a list.
+2:36
+So we could check if something was in nums,
+2:39
+like three in nums.
+2:42
+Nums is this list here,
+2:43
+it was not turned into a string
+2:46
+and saved to nums so we just turned it into a string
+2:48
+and then just released it into the world.
+2:50
+But nums is still a list.
+2:52
+So three and nums.
+2:53
+True, we can do the same thing with strings.
+2:56
+So I could have, I don't know,
+2:58
+a price string.
+3:00
+Price equals dollar sign 56 point 99.
+3:04
+And if I wanted to check if there was a dollar sign
+3:07
+in this string,
+3:08
+I could do dollar sign in price.
+3:13
+And that tells me yep,
+3:14
+there is dollar sign in there.
+3:16
+If I want to see if there is a zero in there,
+3:18
+we get false.
+3:19
+It doesn't tell me where it just tells me it's in there.
+3:22
+We can use slices,
+3:24
+just like we did with lists.
+3:26
+However, we cannot splice meaning
+3:28
+we can't change characters in a string.
+3:31
+Because strings are immutable.
+3:33
+So I can't have well, I guess I already have price,
+3:36
+I can't do something like Price Index of zero equals
+3:40
+and then change that to some other character.
+3:43
+Like hash sign,
+3:45
+I get an error.
+3:46
+String object does not support item assignment.
+3:49
+So I can't change characters.
+3:52
+Now I could concatenate strings.
+3:54
+So I could do
+3:56
+something like hash sign plus another string.
+4:02
+And that makes me a new string.
+4:03
+But both of these strings are immutable.
+4:05
+This third string is immutable.
+4:07
+I also can multiply strings,
+4:09
+which is kind of odd,
+4:11
+or might seem odd, but if I do,
+4:13
+how about exclamation point,
+4:16
+times 10.
+4:18
+I get 10 exclamation points.
+4:20
+It repeats it.
+4:22
+So let's practice with some slices on a string.
+4:25
+Here I've got a somewhat large jibberish string,
+4:29
+I can take a slice.
+4:30
+Well, first of all,
+4:31
+we can just access individual indices.
+4:33
+Nice and easy.
+4:34
+Just like with a list,
+4:35
+just like in JavaScript,
+4:36
+I can access the length, the length of a string.
+4:40
+So MSG here,
+4:42
+14 characters,
+4:44
+there is no message of 14
+4:47
+because the length is always one more
+4:48
+than the greatest index.
+4:50
+So the last characters index 13.
+4:53
+Now if I wanted to get everything from the, I don't know,
+4:56
+the fifth index onwards,
+4:58
+I could do that. Right there.
+4:59
+And that gives me the fifth index
+5:01
+to the end of the string
+5:03
+zero, one, two, three, four, five.
+5:05
+It includes that index of five.
+5:07
+If I did something like this, zero with index, Intel,
+5:11
+the fifth index,
+5:12
+it does not include that fifth index,
+5:15
+it goes up until that index.
+5:16
+So we end up with index zero, one, two, three, four.
+5:21
+And it stops there.
+5:22
+It does not include the I from index five.
+5:25
+And just like with lists,
+5:27
+we can also pass in an interval or a step.
+5:31
+So if I did something like this,
+5:32
+it's a secret message,
+5:34
+we get Hello, which was hidden in there.
+5:36
+So I'm going every other characters starting
+5:38
+from the beginning.
+5:39
+So H, and then we skip to E,
+5:42
+skip to LLO,
+5:44
+exclamation point, exclamation point.
+5:46
+And what about if we start at index of one
+5:49
+and do the same thing?
+5:50
+Oh, even better hidden message.
+5:52
+Chicken. Who doesn't love chickens,
+5:55
+not for eating, only for pets.
+5:58
+So slices work pretty much,
+6:00
+well, they actually work exactly the same way
+6:02
+as they do with lists.
+6:03
+We cannot splice a string like we could with a list,
+6:06
+I can't do something like index
+6:08
+of five onwards equals something.
+6:12
+Because we can assign anything
+6:14
+to any index in a string.
+6:16
+They are immutable as we saw before.
+6:18
+If I tried to do anything at all,
+6:21
+where I'm accessing an index,
+6:22
+and then I'm assigning it to some other thing,
+6:25
+we get that same error.
+6:26
+And then lastly,
+6:27
+we saw that we could iterate letter by letter over a string.
+6:31
+So with a for loop,
+6:33
+just like we could with a list
+6:34
+we could do for character in message.
+6:38
+We'll just print message,
+6:40
+no will print character.
+6:44
+And that's it.
+6:44
+And there we go.
+6:46
+Each character has been printed out.
+6:49
+Okay, so that's a quick recap of strings,
+6:51
+single quotes, double quotes, triple quotes,
+6:53
+which is actually okay, I guess six double quotes,
+6:56
+because we have three double quotes.
+6:59
+Three different ways.
+7:00
+We've got F strings,
+7:02
+we're able to use slices,
+7:03
+but not splices.
+7:05
+And that's about it.
+7:07
+We can iterate, next we're going to talk about
+7:09
+a bunch of built in string methods.
+7:12
+(soft music)

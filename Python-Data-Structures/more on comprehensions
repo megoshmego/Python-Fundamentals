@@ -1,0 +1,505 @@
+can you please provide code for demonstrations of this
+that would be helpful in preparing for 
+my career as a deep learning AI SWE?
+
+
+
+Would you please evaluate the transcript I provide for its key terms, ideas, 
+concepts and their defintions. Would you also please include the video title 
+“more on comprehensinos”, the subsection title "Python Data Structures", 
+and the section title "Python Introduction"?
+
+(soft music)
+0:04
+- [Instructor] Next up, we have a little more
+0:06
+to talk about with list comprehensions,
+0:08
+we'll start off by talking about nested comprehensions.
+0:11
+So a simple example of this
+0:13
+would be to generate a game board
+0:15
+for something where we want a nested array
+0:18
+or a nested list, something like this.
+0:20
+Let's just say it's all zeros and ones.
+0:22
+So that's the first row.
+0:24
+And then we have our second row and then our third row.
+0:27
+And if we wanted to create this,
+0:29
+let's say with a bunch of zeros
+0:31
+that structure or write a function
+0:33
+that could create a three by three,
+0:35
+a four by four or five by five board for us,
+0:38
+we could use a nested list comprehension.
+0:40
+So what we would do is let's say we want three by three,
+0:44
+we would use our range.
+0:46
+If we want somebody to happen three times
+0:48
+four row in range, or we can just call this X in range.
+0:54
+What we want to do is not just make X, like that.
+0:58
+What we actually wanna do is make a list.
+1:00
+So we can start with that.
+1:02
+That makes us an empty list three times
+1:06
+nested inside of apparent list.
+1:08
+But if we instead for going for a three by three,
+1:11
+if we did the same thing inside of here,
+1:13
+so for y in range (3),
+1:18
+and then whatever value we wanted
+1:20
+to initialize our game board with.
+1:22
+So zero, now we have a three
+1:25
+by three nested list filled with zeros.
+1:29
+We could also fill it with none for example
+1:32
+and let's actually write a function to do this for us.
+1:35
+So let's write a function called gen_board().
+1:40
+which will accept, needs to make sure I add my def.
+1:43
+Let's have it accept, well assume it's a square board.
+1:47
+So same number of rows and columns, so as size.
+1:51
+And then we'll add in an initial value
+1:53
+or initial_val, which will default to none.
+1:58
+Is that what we want?
+1:59
+Or maybe we'll have it default to, yeah none as fine.
+2:03
+So the idea is we would call this as gen_board.
+2:06
+And if we wanted a five by five board,
+2:09
+a list with five nested lists,
+2:11
+each list was five items long.
+2:14
+And then the initial_val would just default to none
+2:16
+Or we could specify, you know, zero or true or something.
+2:22
+So what we would do in here
+2:23
+is return a nested list comprehension.
+2:26
+You could also just write a loop yourself
+2:28
+for a nested loop, but this is a lot easier.
+2:31
+Why don't we start the other way around?
+2:33
+So what we'll make is this inner comprehension first,
+2:36
+initial_val for X or Y or column row,
+2:42
+it doesn't really matter, in range of size.
+2:47
+And so that will just make us a single list
+2:51
+inside of a list.
+2:52
+And then we want to repeat that.
+2:54
+So for y in range(size) and that's it.
+3:01
+So if size is five, we're going to make five of these.
+3:06
+X and Y are not being used.
+3:08
+We're simply,
+3:09
+we have to put them there to have some variable
+3:12
+in order for the list comprehension syntax to work,
+3:14
+but we're not actually using X and Y,
+3:17
+we're simply creating whatever this initial_val is none
+3:20
+or zero over and over and over.
+3:23
+And then for this comprehension here,
+3:25
+we're just making a list
+3:27
+and that list happens to have its own comprehension inside.
+3:30
+So let's see if it works.
+3:33
+Okay, I'm going to run this.
+3:34
+It's called comprehension.py.
+3:37
+Gen_board and let's do a three by three, there we go.
+3:41
+None, none, none, none, none, none, none, none, none.
+3:45
+Let's do a five by five
+3:47
+and let's pass in an initial value of zero or false.
+3:54
+Cool, so we've made a function now that it's really short.
+3:58
+It's only a single line and it's pretty flexible.
+4:02
+So we can make all sorts of gen_boards
+4:03
+assuming they're squares
+4:05
+although we could easily modify it to have an X
+4:06
+and a Y or num columns, num rows, but this is good enough.
+4:11
+So that's a simple nested comprehension.
+4:14
+The next thing we can do with list comprehensions
+4:17
+is add in some conditional logic.
+4:19
+So here's a simple example,
+4:21
+instead of simply doubling every number in nums
+4:25
+like we're doing here,
+4:26
+we could only create a list based off of the even numbers.
+4:31
+So we add in this if,
+4:33
+so the if will go at the end of our comprehension,
+4:36
+we'll just do one inline here.
+4:38
+So let's start with the comprehension
+4:40
+that has maybe a range.
+4:42
+Let's do X for X in range(10), like that.
+4:48
+Now we get zero one
+4:49
+two, three, four, five, six, seven, eight, nine.
+4:51
+And if I add in my conditional logic,
+4:53
+if x % 2 == 0,
+4:58
+now we're getting the evens.
+5:00
+So this is acting like map in JavaScript.
+5:03
+This is acting like filter.
+5:06
+And then instead of simply adding X into the list,
+5:09
+we could multiply it by two.
+5:12
+So now we're doubling every even number
+5:14
+and making a new list with it.
+5:16
+Here's another example.
+5:18
+Let's create a simple list of my chickens once again,
+5:23
+and this is going to be a list of dictionaries.
+5:26
+And each chicken will just have a name.
+5:29
+So Henry and then a sex,
+5:34
+which will be, he's a rooster.
+5:37
+So I'll duplicate this a couple of times.
+5:39
+Okay, so here is my list of chickens
+5:42
+and there are what six of them.
+5:45
+Some of them are roosters, some of them are hens.
+5:47
+If I wanted to make a list
+5:48
+that only contained the names of the hens,
+5:53
+I could do that with a list comprehension.
+5:55
+So I'll make a new variable hens.
+5:58
+What I'm going to do
+5:59
+is first go with maybe chicken, chick,
+6:03
+which I go with.
+6:04
+How about bird?
+6:06
+So for bird in chickens, I'll add the name into a new list.
+6:13
+So we want bird["Name"].
+6:20
+So for each bird in the chickens list,
+6:23
+we want to create a new list using the name.
+6:26
+same syntax as we've seen right here,
+6:29
+where we're just taking X or we're doubling X.
+6:32
+But this time we're actually grabbing a particular piece,
+6:36
+a particular value from the dictionary.
+6:39
+So let's see if that works, let's run it.
+6:42
+So we'll run the same file and I'll look at hens.
+6:45
+Now, of course, it's not just the hens
+6:47
+and we'll add in our conditional logic.
+6:49
+So we only want to do this.
+6:51
+We only want to include the birds
+6:53
+or a particular bird if bird["Sex"] == "Hens".
+7:00
+And we'll load that file again.
+7:02
+We look at hens.
+7:03
+Now we only have lady gray Stevie chicks, and Rocket,
+7:07
+and those are the three hens.
+7:10
+So a slightly more complex example
+7:12
+still nothing crazy, simple logic.
+7:14
+We're just checking
+7:15
+to see if something, a single property in a dictionary
+7:18
+is equal to a string Hen
+7:20
+but now we're combining a couple pieces together.
+7:23
+So we're using less comprehensions
+7:25
+to filter or create a new filtered list for us.
+7:28
+Of course, the original chickens list is unharmed.
+7:31
+Thankfully, my chickens are all still there.
+7:34
+Along with a simple, if check-in, if conditional,
+7:37
+we can add in an else, but the syntax is slightly different.
+7:42
+So for example
+7:42
+if I have a list of scores
+7:45
+and I'm teaching a class, this is a pass, fail class.
+7:49
+And I want to translate this list
+7:51
+into a list that looks like this pass,
+7:55
+or maybe just P and F
+7:57
+or true and false, it doesn't matter.
+7:59
+Let's say that my threshold is 70% and higher is a pass.
+8:03
+So we would actually have fail first.
+8:07
+And then we would have pass.
+8:08
+We'd have a bunch of passes, pass, fail, pass,
+8:12
+pass, pass pass, let's add one more fail in here.
+8:16
+Someone will get a 50%.
+8:18
+To do that, I could write a list comprehension,
+8:20
+lets make a new variable, we'll call it grades or something.
+8:24
+And if we look at this syntax here
+8:26
+it looks like we could do something like this.
+8:28
+'PASS for score in scores if score >= 70.
+8:38
+And we definitely can do that.
+8:39
+We could get the number of passes in this list.
+8:43
+That should be what one, two, three, four,
+8:45
+five, six, seven eight, let's verify.
+8:48
+We'll look at grades and we have eight passes hopefully.
+8:52
+Len(grades) gives us eight.
+8:54
+Okay, so there's no else in here right now.
+8:57
+What my first instinct usually is
+9:00
+when I've been away from Python for a bit
+9:02
+is to put an else here and do something like else"Fail".
+9:06
+However, this is not going to work.
+9:08
+If I tried running that we get a syntax error.
+9:12
+Instead, the syntax looks like this,
+9:15
+do_this If something else do this for thing in things,
+9:25
+I don't even know if that's helpful to type out,
+9:27
+but we're going to rewrite our logic.
+9:29
+It's just a different pattern
+9:31
+that we use If we have an if with a corresponding else,
+9:34
+if we have two outcomes.
+9:36
+So if we rewrote this version, I'm just duplicated here.
+9:39
+Comment out at that first one.
+9:41
+We move this if that we have here over here.
+9:45
+So PASS if score >= 70 else FAIL for score in scores.
+9:55
+And if we try running that one, take a look at grades.
+9:58
+We now have fail, Pass, pass, pass, fail,
+10:01
+pass, pass, pass, pass, fail pass.
+10:04
+I assume that's right.
+10:05
+Fail, pass, pass, pass, fail.
+10:08
+Most what we have, right, fail, pass, yes.
+10:09
+Okay, so that is how we can add in a conditional
+10:13
+with an if and a corresponding else.
+10:15
+You just have to remember that the syntax does change.
+10:18
+All right, so one last example here.
+10:20
+I'm not gonna show any new syntax.
+10:22
+That's really it for list comprehensions.
+10:25
+We can map over something,
+10:27
+we can filter out based off of an if,
+10:29
+and we can also add in a corresponding else.
+10:31
+We just have to switch it up.
+10:33
+But what I wanna show here is that
+10:35
+often we'll have a function
+10:37
+that we can call from within a list comprehension.
+10:40
+So here is a dictionary I found online,
+10:43
+I didn't type this myself of morse code.
+10:45
+So we have some lookup, a character like A
+10:49
+and then we get the corresponding morse code
+10:51
+dots and dashes.
+10:53
+So we got a single dot and then one dash.
+10:56
+If we look at S I know S for sure,
+10:58
+because of SOS, where are you?
+11:00
+We've got three dots.
+11:02
+So if I wanna make a function
+11:04
+this has nothing to do with list comprehensions.
+11:05
+I just wanna make a function called get_letter
+11:08
+and I can pass a letter in like S
+11:10
+and it should return to me dot dot dot.
+11:14
+All I need to do is to find, get letters.
+11:15
+So def get_letter, we'll pass in a letter,
+11:19
+and then I'll indent this properly.
+11:25
+And what I wanna do is take that letter
+11:27
+and return the corresponding value from this morse_lookup.
+11:33
+So return morse_lookup of ltr.
+11:37
+But I can improve this function a little bit.
+11:39
+We'll start, I'm just making sure it works.
+11:41
+So if I run the file and I run get_letter of S it works,
+11:49
+but we have a problem,
+11:50
+which is if I pass it in a lowercase letter,
+11:52
+it doesn't work.
+11:54
+So I would change this
+11:56
+so that we're always upper casing
+11:58
+whatever letter is passed in.
+12:00

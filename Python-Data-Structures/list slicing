@@ -1,0 +1,386 @@
+can you please provide code for demonstrations of this
+that would be helpful in preparing for 
+my career as a deep learning AI SWE?
+
+
+
+Would you please evaluate the transcript I provide for its key terms, ideas, 
+concepts and their defintions. Would you also please include the video title 
+“list slicing”, the subsection title "Python Data Structures", 
+and the section title "Python Introduction"?
+
+anscript
+
+
+0:00
+(upbeat music)
+0:04
+- [Instructor] In this video we're gonna discuss
+0:06
+a great feature in Python called slices or slicing.
+0:09
+But first there's one thing
+0:11
+I just realized I didn't mention
+0:13
+when we make a list just like in JavaScript,
+0:16
+the data itself is not what is stored.
+0:19
+Obviously the data is stored
+0:21
+but just like JavaScript
+0:22
+lists are reference types like JavaScript arrays
+0:26
+which means if I make a copy will call this copy
+0:30
+and set it equal to vegan_ no_nos
+0:33
+these are two variables now pointing
+0:35
+to the same list in memory the same reference.
+0:38
+So if I change one of them,
+0:39
+let's say copy of zero equals Eggsssss like that.
+0:45
+We look at copy it's been updated,
+0:47
+so has vegan_ no_nos,
+0:50
+so just like JavaScript there.
+0:52
+Also if I compare the two copy
+0:56
+is vegan_ no_nos
+0:59
+we get true because they are the exact same reference.
+1:02
+Whereas if we did something like this one, two, three is,
+1:04
+one, two, three they are not the same reference.
+1:07
+But if we instead did double equals
+1:10
+that just compares to their contents and that is true.
+1:14
+So on to slices,
+1:16
+Python gives us a really nice syntax
+1:18
+to retrieve particular parts of a list,
+1:22
+so if I only want the first half of a list,
+1:24
+or I want every other element in a list.
+1:28
+We can use the square brackets,
+1:30
+just like we would to access a particular element
+1:33
+one at a time like a vegan_ no_nos
+1:37
+of three gives us fish.
+1:40
+But we can also add in some other characters here,
+1:43
+some other indices,
+1:45
+we put some colons in there,
+1:46
+it all means something special to Python,
+1:48
+and it allows us to retrieve portions of a list.
+1:52
+So there's three different pieces we can pass in,
+1:54
+a start point,
+1:56
+a stop point and a step.
+1:58
+it's kind of like generating a range,
+2:00
+which we saw earlier on.
+2:02
+So we can specify a start
+2:04
+and then a colon to indicate
+2:06
+we are now separating the start
+2:08
+and adding in a stop
+2:09
+and then another colon to indicate a step.
+2:12
+So I'll show you that now
+2:14
+we have vegan_ no_nos
+2:15
+let's start at, I don't know index of two colon,
+2:20
+we'll stop at index of four and our step will be one.
+2:24
+And that gives us milk and fish
+2:26
+if we look at vegan_ no_nos,
+2:28
+we started at index of two,
+2:30
+so zero, one, two milk and then we go up until index four.
+2:35
+So that is figs but we don't include figs
+2:38
+and we're stepping by one.
+2:40
+If I instead did start at index zero,
+2:44
+go to index of zero one, two, three wait,
+2:47
+zero, one, two, three, four.
+2:48
+Let's go to index five
+2:50
+and we'll go each element one at a time,
+2:54
+we get the entire list.
+2:55
+If I did count by twos, step by twos
+2:59
+we now start with eggs and then we skip meat and go to milk.
+3:03
+Then we skip fish and go to figs,
+3:07
+so we could make a slightly more interesting list.
+3:09
+Let's go with nums
+3:11
+well I guess,
+3:12
+I never thought I would say nums is more interesting,
+3:14
+let's make something more complicated with more numbers.
+3:16
+Let's go from zero to 100 with a step of one
+3:22
+and make a list.
+3:23
+So there's nums all these numbers here
+3:27
+and we can play around by slicing it.
+3:31
+Let's do nums square brackets
+3:34
+index of 50
+3:37
+to index of 60
+3:40
+step by one.
+3:41
+There we go 50, 51, 52 and so on,
+3:44
+again we don't get that last index
+3:47
+and this is kind of confusing
+3:48
+because the indices are the same as the actual values
+3:52
+because I generated a list from zero to 100.
+3:56
+But just remember that the start is inclusive,
+3:59
+it includes that start number that start index
+4:02
+and the end is not inclusive.
+4:05
+So it stops retrieval before up to that index.
+4:10
+Now we don't always have to pass in all three values,
+4:14
+we can also skip things so we can use a default start,
+4:17
+a default stop or a default step.
+4:20
+So for example, if we do index of two and then colon
+4:25
+this is a way of indicating that we want
+4:27
+from index of two onwards.
+4:29
+So why don't I do index of 90 colon,
+4:32
+and that gives me everything from 90 to the end of the list.
+4:37
+The reason I need that colon of course is
+4:38
+because nums of 90 just gives me that actual element
+4:42
+but that colon makes it clear this is a slice.
+4:46
+I can also add a second colon,
+4:48
+if I wanted to specify the step.
+4:52
+Now we go from 90 index of 90 to the end of the list
+4:56
+with a step of two.
+4:58
+So we have to have two colons,
+5:00
+so that Python knows we're skipping over,
+5:02
+we're using the default stop point at the end of the list
+5:06
+but we do wanna add an interval or a step.
+5:10
+We can also skip the initial starting point
+5:13
+and use the default,
+5:15
+and that looks like this nums
+5:17
+and if I just do a colon first
+5:19
+and then go to 10 I get the first 10 elements.
+5:23
+So index of zero up to index of 10
+5:26
+and I could also add in an interval or a step
+5:29
+let's go by fives.
+5:31
+And if we just get zero, five
+5:34
+I could do the same thing and get the entire list
+5:38
+from start to finish with a step of five.
+5:41
+And I'm now getting whatever's at index of zero,
+5:43
+index five index 10, 15 all the way up to 95.
+5:48
+We also can go negative
+5:50
+so we can pass it in a negative interval
+5:53
+and this one can be a bit confusing.
+5:55
+Let's take our nums and go from the default,
+5:59
+start and stop,
+6:00
+but negative 10 will be our step.
+6:04
+And now we're going from the end of the array
+6:07
+and then skipping 10 indices each time through,
+6:10
+if I had just done negative one
+6:12
+we get the entire I'm sorry I just said array.
+6:14
+I meant to say list may have done that already
+6:16
+a couple of times we get the entire list but reversed.
+6:20
+And I haven't mentioned this yet
+6:22
+but none of this is mutating the original.
+6:25
+So nums is still zero through 99,
+6:28
+but we're making a slice
+6:29
+which I could save to some variable,
+6:32
+I could call this reversed nums.
+6:35
+And now I have my own copy that has been reversed
+6:40
+and I can also pass in specific starting and end points
+6:44
+to use a negative step four.
+6:46
+So when I did this,
+6:48
+let's do negative 10 one more time.
+6:51
+It didn't use the default start,
+6:53
+which would be index of zero to the default end,
+6:55
+the end of the list.
+6:57
+It actually went from the end of the list
+6:59
+as the start point to the beginning of the list.
+7:02
+But if I wanted to,
+7:03
+let's say go from index 10
+7:06
+to index 20,
+7:08
+and I wanna go in reverse order.
+7:10
+This won't work because it starting at 10
+7:13
+and if we stepped down by one,
+7:15
+we're going in the wrong direction.
+7:17
+So that's not gonna work,
+7:19
+we instead need to switch up the start and the stop.
+7:24
+So that we go from 20 to 10 and there we go.
+7:28
+So slices are really, really useful
+7:31
+especially when you wanna take
+7:33
+like the second half of a list
+7:35
+or every other element in the list
+7:38
+and create something new with that.
+7:41
+It doesn't exist there's no analog
+7:43
+at least no easy analog in JavaScript,
+7:45
+especially now with this nice syntax
+7:47
+where we can do it right there within the square brackets.
+7:50
+It's one of my favorite pieces of Python
+7:52
+along with comprehensions,
+7:54
+which is something we'll see in just a bit.
+7:56
+Just remember we have a start,
+7:58
+which is included a stop
+8:00
+which is not included it,
+8:02
+everything up until that stop point and then a step.
+8:06
+And we can leave them off,
+8:08
+but we need to make sure we're adding
+8:09
+the correct colons in to tell Python
+8:12
+we're omitting the start point
+8:14
+or here we're omitting start and stop,
+8:17
+but we're using the interval or the step of two,
+8:20
+and you can use negative steps as well.
+8:22
+Okay, so that is slicing lists.
+8:24
+(upbeat mus

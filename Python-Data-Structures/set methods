@@ -1,0 +1,246 @@
+can you please provide code for demonstrations of this
+that would be helpful in preparing for 
+my career as a deep learning AI SWE?
+
+
+
+Would you please evaluate the transcript I provide for its key terms, ideas, 
+concepts and their defintions. Would you also please include the video title 
+“set methods”, the subsection title "Python Data Structures", 
+and the section title "Python Introduction"?
+
+
+:00
+(upbeat music)
+0:04
+- [Narrator] All right.
+0:05
+Continuing with sets, just like with strings and with lists,
+0:09
+we can use the in operator to check if a given value
+0:13
+is a member of a set.
+0:14
+So I have this languages set, JavaScript, Ruby, Python.
+0:19
+I can check if some languages in there
+0:21
+like scala in languages and,
+0:26
+nope, I didn't spell it correctly, of course we get false.
+0:32
+If I instead check to see if Ruby is in there, we get true.
+0:37
+All right, so that's the first simple thing we can do.
+0:40
+But we also have some very important
+0:42
+and very simple methods.
+0:43
+The first is add.
+0:45
+If we want to add an element to a set
+0:47
+after it's been created, we can't, and we don't have
+0:51
+an easy syntax like we would with a dictionary
+0:53
+where we use a square brackets and the key,
+0:56
+because there are no keys.
+0:57
+Instead we use the add method, so languages,
+1:01
+try and spell it right this time, .add,
+1:04
+and let's add ('scala') in there.
+1:06
+Now languages contains scala.
+1:10
+If we try and add something that's already in there,
+1:12
+no error, it's just not added in and the return value
+1:16
+is going to be none.
+1:18
+We also have pop(), which we'll just take
+1:21
+an arbitrary element from a set.
+1:24
+So it doesn't require any argument.
+1:27
+In fact, it doesn't want an argument.
+1:28
+If we look at it, we'll do D, no not DIR, help(set.pop).
+1:35
+You can see it doesn't want anything to be passed in.
+1:37
+Remove and return an arbitrary set element
+1:40
+and it raises an error if the set is empty.
+1:43
+So we have our languages, we can call pop() on it
+1:46
+and we get scala this time.
+1:48
+And if we look at languages, it now is missing scala.
+1:52
+Do one more and now it should be missing Ruby.
+1:56
+That value is returned to us so we could capture it
+1:59
+and now we have JavaScript and Python in that set.
+2:03
+We also can explicitly call one element or one value
+2:07
+to be removed using the remove method.
+2:10
+So we need to pass in the value we want to be removed.
+2:14
+If I wanted to remove Python, for example,
+2:16
+I could do languages.remove('python').
+2:21
+And now languages is only one element long.
+2:25
+Speaking of which, if we call Len(languages),
+2:29
+we get the length.
+2:31
+So Len is very versatile.
+2:33
+It's the universal way of getting the length
+2:35
+of a data structure in Python.
+2:38
+Let's add something else back in two languages.
+2:41
+Let's do ('C') and let's also add Java in there.
+2:47
+Okay so now we have three languages and let's just do
+2:50
+one more example of remove.
+2:52
+Let's get rid of Java.
+2:56
+Okay, it's gone now.
+2:58
+Now we also have a copy method, which just like
+3:01
+the other versions of copy we've seen before.
+3:04
+We'll make a copy of this data structure of a set,
+3:07
+and that copy will have a separate reference in memory.
+3:11
+They won't be referring to the same thing in memory
+3:13
+which is nice.
+3:14
+So just as before, if I have a copy of languages,
+3:19
+this is not a copy at the moment.
+3:21
+Copy equals languages.
+3:23
+They look the same.
+3:25
+And if we compare them with double equals,
+3:28
+they are the same as far as their contents
+3:31
+and if we compare them with is, they are the same
+3:35
+as far as their identity.
+3:37
+But if I instead set copy to be languages.copy(),
+3:42
+this now makes me an actual copy, a new copy and memory
+3:45
+where if I do double equals, we still get true
+3:50
+because they have the same contents at this point.
+3:53
+But now if I use is, copy is languages,
+3:56
+surprise, surprise, we get false.
+3:58
+And because we can't store mutable data structures,
+4:02
+we can't store lists, we can't store other sets,
+4:05
+for example, inside of a set.
+4:07
+If we try that, by the way, just do a quick example.
+4:11
+Let's do 1, 2, 3, and then set in here, 1, 2, 3,
+4:16
+we get an error unhashable type: 'set'
+4:18
+because sets are not immutable.
+4:20
+They are mutable structures.
+4:21
+So back to what I was saying earlier,
+4:23
+because sets have to be entirely immutable,
+4:27
+we don't have to worry about whether copy
+4:29
+is deep or shallow.
+4:31
+If it's going to create copies of nested data structures,
+4:34
+because there won't be nested data structures.
+4:37
+Lastly, let's take a look at help(set)
+4:40
+or let's do dir(set), not help.
+4:44
+There are some other methods we haven't talked about yet.
+4:47
+So we will talk about things like
+4:49
+union and symmetric difference
+4:51
+and intersection and difference.
+4:54
+But otherwise, I guess the only one we're missing
+4:57
+at this point is clear.
+4:58
+Clear does just the same thing that it does
+5:01
+for other data structures.
+5:02
+It will empty out the set.
+5:04
+So I have languages and I do languages.clear().
+5:08
+It's still there, but it's now completely empty
+5:11
+on the inside, just like me.
+5:14
+So that's a basic overview of set methods,
+5:17
+some of the most important ones.
+5:18
+Most of the time I'm adding and removing
+5:21
+elements from a set.
+5:22
+That's pretty much it, but we also can use pop()
+5:25
+to arbitrarily remove something from a set
+5:28
+and we can use copy to make a copy.
+5:30
+Next up, we're gonna talk about this group of other methods
+5:34
+that sound a bit scarier;
+5:36
+intersection and symmetric difference and difference.
+5:39
+That's coming up next.
+5:40
+(upbeat music)

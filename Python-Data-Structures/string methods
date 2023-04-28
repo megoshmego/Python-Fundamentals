@@ -1,0 +1,528 @@
+can you please provide code for demonstrations of this
+that would be helpful in preparing for 
+my career as a deep learning AI SWE?
+
+
+
+Would you please evaluate the transcript I provide for its key terms, ideas, 
+concepts and their defintions. Would you also please include the video title 
+“string methods”, the subsection title "Python Data Structures", 
+and the section title "Python Introduction"?
+
+Transcript
+
+
+0:00
+(upbeat music)
+0:03
+- [Instructor] Next up string methods.
+0:05
+So if we take a look using that dir function, DIR,
+0:08
+just like we did with list,
+0:10
+where we saw that there are, what?
+0:12
+10, 11, something like that different lists methods.
+0:16
+If we do the same thing for string, which is str,
+0:19
+or if you just pass in any old string,
+0:22
+there are quite a few more methods, a lot more.
+0:26
+Now we're not gonna go over each one individually,
+0:28
+I'm gonna point out some of the most commonly used ones.
+0:31
+But remember if you ever have a question about any of these,
+0:34
+one, you can look on the actual doc is online,
+0:37
+but two you could look at one of them
+0:39
+using the help function.
+0:41
+So help string dot let's look at
+0:44
+what's number we're not gonna work with?
+0:45
+How about zfill?
+0:49
+It tells us it pads a numeric string with zeros on the left,
+0:52
+to fill a field of the given width,
+0:55
+and we pass in a width.
+0:57
+So a numeric string would be something like this,
+0:59
+where we have a nine two,
+1:02
+and then I could call zfill and pass in a number of places,
+1:07
+a number of slots for this number like five,
+1:11
+and it will pad it with zeros
+1:12
+to give me a five digit number.
+1:14
+But if I instead had nine, two, four, five,
+1:17
+it only adds in one zero.
+1:19
+If I already have five digits, it doesn't add anything in.
+1:22
+So you can use this help function at any point
+1:25
+to get some help, to try and understand more
+1:28
+about these built-in methods of which there are many.
+1:31
+So we'll just go through in alphabetical order.
+1:33
+Some of the highlights here, we've got a method called count
+1:37
+and it returns a number of times some character
+1:39
+occurs in a string.
+1:41
+So we have this message string found to figure out
+1:44
+how many hs are in there.
+1:46
+I could do msg.count h,
+1:50
+and we get two.
+1:51
+There's one, and there's two right there.
+1:54
+If I were to uppercase it, it is case sensitive.
+1:57
+So there are zero uppercase Hs, and that's pretty much it.
+2:01
+If I look for something that is not in there
+2:03
+like a question mark, we get zero as well.
+2:07
+Next up, we have endswith, and there's also startswith.
+2:11
+Now endswith and startswith take a string,
+2:14
+and will return true or false depending on,
+2:17
+in the case of endswith whether the string
+2:19
+you're calling it on ends with some other string.
+2:23
+So I could check if message endswith n,
+2:29
+which it does.
+2:30
+I could check if it ends with an exclamation point,
+2:32
+it does not.
+2:34
+But I can also pass in a longer string.
+2:36
+Like does it end with exclamation point n?
+2:38
+And it indeed does.
+2:40
+We can also use startswith, it works exactly the same way
+2:43
+except it checks the beginning of a string.
+2:45
+Let's make a variable called person.
+2:47
+We'll set it to Mr. Jones,
+2:50
+and I can check if person.startswith(Mr),
+2:55
+and we get True.
+2:57
+I could do Mr. Space.
+2:58
+That's still true.
+2:59
+Or I could just do M.
+3:02
+So startswith and endswith,
+3:04
+it's not just a single character we're checking for.
+3:06
+It can be an entire string that we're checking to see
+3:10
+if a string starts or ends with.
+3:13
+Next step, we have find.
+3:15
+Find is going to find the first occurrence of some string
+3:19
+within a string, and it will return the first index.
+3:22
+So if there are multiple matches,
+3:24
+it'll only get the first index.
+3:26
+This string, I guess,
+3:28
+we could just do person.find period
+3:30
+if we want to do.
+3:31
+And we get index of two, zero, one, two.
+3:34
+But if we go back to our message string,
+3:36
+and I do msg.find exclamation point,
+3:41
+index of 10, zero, one, two, three, four,
+3:44
+five, six, seven, eight, nine, 10,
+3:46
+it did not give us this index.
+3:47
+It's just the first match and then it stops.
+3:51
+If we look for something slightly longer like this,
+3:55
+it also works.
+3:56
+It happens to also be index of 10,
+3:58
+because that's where it starts.
+4:00
+This sequence here, that substring.
+4:02
+If I looked for person.find Mr,
+4:08
+I would get zero.
+4:09
+If I looked for J, I get four.
+4:12
+If I want the first space, I get three.
+4:15
+There's only one space in there, right there,
+4:17
+index of three, zero, one, two, three.
+4:20
+If something is not found person.find question mark,
+4:26
+and I close it correctly, we do get negative one,
+4:29
+which I think is kind of confusing because unlike
+4:32
+in JavaScript, if we try and access person of negative one,
+4:37
+it actually gives us a letter.
+4:38
+It gives us the last character, Jones ends with an S,
+4:41
+index if negative one is S,
+4:43
+index if negative two is going to be e, negative three is n.
+4:48
+So I feel like negative one is kind of counterintuitive
+4:52
+just because in Python, negative one is a valid index
+4:55
+unlike in JavaScript.
+4:57
+Next up, we have isdigit.
+4:59
+And this will tell us if a string S
+5:02
+is entirely made up of digits.
+5:04
+So if we have some string
+5:06
+like, hello4'.isdigit,
+5:10
+we get false.
+5:11
+But if I instead had four, we get true.
+5:14
+If I had that number,
+5:17
+we still get true.
+5:18
+So it's not just checking if it's a single digit,
+5:22
+but if the entire string consists entirely of digits.
+5:26
+So this is false, even though it contains a digit,
+5:29
+it also contains non-numerical digits.
+5:31
+This returns true, and this also returns true.
+5:36
+Next up, we have join.
+5:38
+Now, join, we'll make a new string for us.
+5:40
+It works a little bit differently.
+5:42
+It doesn't act upon the string that we're calling it on.
+5:46
+It's not going to update or change this in any way.
+5:49
+Well, I guess strings are mutable anyway,
+5:51
+but it's not looking within this
+5:53
+like isdigit or find or endswith or count all of them do.
+5:57
+What we'll do instead is take some iterables
+5:59
+or some collection and join it together
+6:02
+in a single new string where they are separated
+6:05
+by this character.
+6:06
+So whatever character we call it on.
+6:09
+So do we still have chickens over here?
+6:11
+Okay, so if I wanna join them
+6:14
+into one massive string separated by,
+6:17
+I guess we'll just do a pipe character.
+6:20
+I can do pipe character.join chickens,
+6:23
+and we get annabelle|butters|butters,
+6:28
+again and so on.
+6:29
+I can also call this on a string, which is also an iterable.
+6:34
+So I could do, let's do join on a period,
+6:40
+and then our string will be LOL,
+6:44
+and we get L.O.L.
+6:47
+Notice it did not add a period to the very end,
+6:50
+because it's only using that character to join
+6:53
+the individual elements together.
+6:55
+It inserts it between the elements,
+6:57
+so it doesn't add it at the end.
+6:58
+That's why we don't have a pipe at the end over here.
+7:01
+Anyway, most of the time we're not joining strings
+7:03
+into other strings,
+7:05
+usually, we're joining a list into a string.
+7:08
+So join is a way of combining some iterable
+7:10
+into a new string, and then you can pass in a separator,
+7:13
+you could also do an empty string.join.
+7:18
+Like that and now we just end up with one large word.
+7:21
+The spaces are because I have some chickens
+7:24
+who have spaces in their name, like Stevie Chicks
+7:26
+and Lady Gray.
+7:28
+After join, we also have lower.
+7:31
+So there are multiple casing methods.
+7:34
+Lower is one example.
+7:35
+So if I do LOL.lower,
+7:42
+we get lowercase version of LOL, very similar to JavaScript,
+7:45
+almost all these methods, we're taking a look at,
+7:47
+have analogs in JavaScript,
+7:49
+usually with slightly different names.
+7:51
+So there is no lower in JavaScript, we have two lowercase,
+7:55
+in Python, it's just lower.
+7:57
+But we also have others.
+7:58
+So obviously we have upper.
+8:04
+It looks like I'm not closing my quote correctly there,
+8:06
+there we go.
+8:07
+And we get all caps.
+8:09
+We also have another option,
+8:11
+if we had some name here like mrs kitty cat,
+8:16
+and I call capitalize.
+8:21
+It's going to capitalize the very first letter
+8:23
+and that's it.
+8:24
+So it only uppercase's the first letter in a string.
+8:27
+We also have a group of methods that have to do
+8:29
+with casing like isupper, islower.
+8:33
+These are ways to determine
+8:34
+if something is uppercase or lowercase.
+8:36
+So I could do 'LOL'.isupper()
+8:41
+and we get True.
+8:42
+But if I have a lowercase letter in there, we get False.
+8:45
+Same thing for islower, but it works the other way around.
+8:48
+We also have a method called replace.
+8:50
+Now replace is used to replace some string or sub string
+8:54
+within given string.
+8:56
+And we can specify how many replacements should be made.
+8:59
+And the default will be to replace all occurrences.
+9:02
+So if I had some string
+9:03
+let's just call this a things,
+9:07
+and it's equal to
+9:09
+apples-
+9:12
+tomatoes-,
+9:14
+is there an E in tomatoes?
+9:15
+I think so, jeez, I'm so bad with spelling,
+9:17
+and pickles like that, and I hit enter nothing fancy there.
+9:23
+But if I replace the thing I want to replace will be a dash
+9:27
+or a hyphen or whatever that is
+9:28
+and I'll replace it with an equal sign.
+9:32
+That gives us a new string where all hyphen, dashes,
+9:36
+things have been replaced with equal signs.
+9:39
+Now it doesn't change things because strings are immutable
+9:42
+just like in JavaScript.
+9:43
+It makes us a new string with those changes.
+9:45
+I could also say, I only want you to replace the first one
+9:50
+and that's what it does.
+9:52
+So the default is to replace all of them
+9:54
+if you leave it off, which is nice.
+9:57
+We can do more complex replacements too.
+10:00
+So if we had, I don't know, a text message
+10:03
+that was a string like
+10:06
+I hate you
+10:09
+so much.
+10:11
+It's a bit sad.
+10:12
+And I wanted to replace those spaces, which I can
+10:17
+with three dots and ellipsis.
+10:21
+Now we have,
+10:22
+I...hate...you...so...much.
+10:26
+So we can replace one character with three characters,
+10:29
+or we could replace it with a whole bunch of characters.
+10:33
+It doesn't matter.
+10:35
+We can also not just select a single character to replace.
+10:38
+So if we had some tweet, that was just a bunch
+10:42
+of YOLO, hahaha, omg #YOLO,
+10:47
+like that.
+10:48
+I could replace YOLO, tweet.replace YOLO with nothing.
+10:57
+Now I don't get rid of the space that we had there,
+11:00
+and I didn't get rid of my little hashtag sign,
+11:02
+but I removed the YOLO so that's good enough for me.
+11:06
+Okay, so let's replace, just remember you can also specify,
+11:09
+you only want to replace one, you can replace all,
+11:12
+and if you want to explicitly specify how many
+11:15
+and the default is to replace all
+11:18
+but you can also pass that in yourself as negative one,
+11:21
+which will replace all.
+11:22
+So that's the default value for the count.
+11:25
+Next, we have split.
+11:27
+Now split, we'll take some string,
+11:29
+and split it into a list based off of
+11:32
+some separating character.
+11:34
+So if I had, oops, let me clear there.
+11:37
+I had a string of animals like goats, chickens,
+11:42
+duck, oh ducks, geez, cannot type,
+11:48
+pigs, and how about what's another farm animal?
+11:52
+Alpacas like that.
+11:55
+I could do animals.split on coma.
+11:59
+And they'll give me a new list where each element
+12:02
+is a portion of the string that has been split
+12:04
+based off of that separator character.

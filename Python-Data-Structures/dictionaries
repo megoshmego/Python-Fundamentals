@@ -1,0 +1,46 @@
+The transcript discusses dictionaries in Python as a key-value pair data structure that is ordered by insertion order. It highlights the similarities and differences between dictionaries in Python and JavaScript. In Python, every key-value pair is separated by a colon, and commas separate each pair. The values can be any type of mutable data, except other dictionaries or lists. The transcript also explains how to create a dictionary, check if a key exists, access values, update values, and use the get method to return a default value. It also introduces the dict constructor function and the help and dir methods.
+
+
+
+
+Certainly, here's an example code that demonstrates the use of convolutional neural networks (CNNs) for image classification using the popular TensorFlow library in Python:
+
+```
+import tensorflow as tf
+from tensorflow.keras import datasets, layers, models
+
+# Load the CIFAR-10 dataset
+(train_images, train_labels), (test_images, test_labels) = datasets.cifar10.load_data()
+
+# Normalize pixel values to be between 0 and 1
+train_images, test_images = train_images / 255.0, test_images / 255.0
+
+# Define the CNN architecture
+model = models.Sequential([
+    layers.Conv2D(32, (3, 3), activation='relu', input_shape=(32, 32, 3)),
+    layers.MaxPooling2D((2, 2)),
+    layers.Conv2D(64, (3, 3), activation='relu'),
+    layers.MaxPooling2D((2, 2)),
+    layers.Conv2D(64, (3, 3), activation='relu'),
+    layers.Flatten(),
+    layers.Dense(64, activation='relu'),
+    layers.Dense(10)
+])
+
+# Compile the model with appropriate loss function, optimizer and metrics
+model.compile(optimizer='adam',
+              loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+              metrics=['accuracy'])
+
+# Train the model on the training set
+history = model.fit(train_images, train_labels, epochs=10, 
+                    validation_data=(test_images, test_labels))
+
+# Evaluate the model on the test set
+test_loss, test_acc = model.evaluate(test_images, test_labels, verbose=2)
+print(f'Test accuracy: {test_acc}')
+```
+
+This code defines a CNN architecture for image classification on the CIFAR-10 dataset, compiles the model with appropriate loss function, optimizer and metrics, trains the model on the training set, and evaluates the model on the test set. You can modify the architecture and hyperparameters to experiment and improve the model's performance.
+
+I hope this helps you in your preparation for your career as a deep learning AI SWE!

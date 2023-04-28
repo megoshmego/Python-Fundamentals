@@ -1,0 +1,83 @@
+Key terms and concepts:
+- Dictionaries: a data structure in Python that stores key-value pairs.
+- Built-in set of methods: a predefined set of methods that are available for use on every dictionary.
+- get: a method that returns the value for a specified key in a dictionary, and can also be used to set a default value if the key is not found.
+- items, keys, and values: methods used for iterating over the key-value pairs in a dictionary.
+- dict.keys() and dict.values(): methods used to access the keys and values of a dictionary.
+- copy: a method used to make a shallow copy of a dictionary, which creates a new dictionary with the same keys and values.
+- pop and popitem: methods used to remove a specified key-value pair from a dictionary, with popitem removing a random pair.
+- fromkeys: a method used to create a new dictionary with specified keys and default values.
+- clear: a method used to remove all key-value pairs from a dictionary.
+
+Video Title: Dictionary Methods
+Subsection Title: Python Data Structures
+Section Title: Python Introduction
+
+Certainly! Here's some example code demonstrating some of the concepts discussed in the video:
+
+```python
+# Example dictionary
+chicken = {
+    'name': 'Lady Gray',
+    'breed': 'Australorp',
+    'age': 3,
+    'egg_chart': {
+        'Monday': True,
+        'Tuesday': False,
+        'Wednesday': True,
+        'Thursday': True,
+        'Friday': False,
+        'Saturday': True,
+        'Sunday': True
+    }
+}
+
+# Using the get() method to get a value with a default
+sex = chicken.get('sex', 'unsexed')
+print(sex) # Output: unsexed
+
+# Iterating over keys, values, and items
+for key in chicken.keys():
+    print(key)
+    
+for value in chicken.values():
+    print(value)
+    
+for key, value in chicken.items():
+    print(key, value)
+
+# Converting keys or values to a list and sorting
+keys_list = list(chicken.keys())
+keys_list.sort()
+print(keys_list)
+
+values_list = list(chicken.values())
+values_list.sort()
+print(values_list)
+
+# Making a copy of a dictionary
+nuggets = chicken.copy()
+nuggets['name'] = 'Nuggets'
+print(chicken['name']) # Output: Lady Gray
+print(nuggets['name']) # Output: Nuggets
+
+# Removing a key-value pair with pop()
+name = chicken.pop('name')
+print(name) # Output: Lady Gray
+print(chicken) # Output: {'breed': 'Australorp', 'age': 3, 'egg_chart': {...}}
+
+# Removing a random key-value pair with popitem()
+item = chicken.popitem()
+print(item) # Output: ('egg_chart', {'Monday': True, 'Tuesday': False, 'Wednesday': True, 'Thursday': True, 'Friday': False, 'Saturday': True, 'Sunday': True})
+print(chicken) # Output: {'breed': 'Australorp', 'age': 3}
+
+# Creating a new dictionary with fromkeys()
+weekdays = dict.fromkeys(['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], True)
+print(weekdays) # Output: {'Monday': True, 'Tuesday': True, 'Wednesday': True, 'Thursday': True, 'Friday': True}
+
+# Clearing a dictionary with clear()
+chicken.clear()
+print(chicken) # Output: {}
+```
+
+I hope this helps!

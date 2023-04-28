@@ -1,0 +1,408 @@
+can you please provide code for demonstrations of this
+that would be helpful in preparing for 
+my career as a deep learning AI SWE?
+
+
+
+Would you please evaluate the transcript I provide for its key terms, ideas, 
+concepts and their defintions. Would you also please include the video title 
+“tuples”, the subsection title "Python Data Structures", 
+and the section title "Python Introduction"?
+
+(soft music)
+0:04
+- [Instructor] Next step we have another data structure,
+0:07
+this one's quite simple, it's called a tuple.
+0:10
+Tuples are kind of like lists.
+0:12
+They are ordered collections of values.
+0:16
+However, there are a few key differences.
+0:18
+The first is that tuples are immutable.
+0:20
+Meaning that once we create a tuple, we cannot change it.
+0:24
+We can't add value to it, we can't remove a value,
+0:27
+unlike a list.
+0:28
+But like a list, there is an order to a tuple.
+0:32
+And the way that we create a tuple is by using parentheses.
+0:35
+Now the term tuple has come up a couple of times.
+0:38
+I'll highlight where we've seen it already,
+0:40
+but let's start by making some simple tuples.
+0:44
+So over here, I'll clear some space.
+0:47
+Let's make a new tuple.
+0:49
+We'll call this colors,
+0:51
+and we'll have red, green, actually let's go red, yellow,
+0:57
+and then green, just like that,
+1:01
+and that makes us a tuple.
+1:03
+If we look at type of colors, it's a tuple.
+1:07
+If I try and do something to this tuple like I don't know,
+1:11
+some list method like append, it doesn't exist.
+1:16
+Append some other thing we get an error.
+1:19
+If I try and access one of the elements,
+1:24
+I can do that using an index.
+1:28
+If I try and access something out of bounds,
+1:29
+I can't do that, there's only three elements in there,
+1:32
+the highest index is two,
+1:34
+I can look at the len the length of a tuple,
+1:39
+and we get three.
+1:40
+So they are ordered as we've already seen,
+1:43
+but we can not change them,
+1:44
+if I try and do colors of index zero,
+1:46
+and set that now to be red, in all caps, doesn't work.
+1:51
+Tuple object is not support item assignment.
+1:54
+So tuples are immutable.
+1:56
+They are collections of values and we can put
+1:58
+whatever we want in there.
+2:00
+We could make a tuple with a number and then a Boolean,
+2:03
+and then inside of that, another tuple.
+2:07
+I could even put a list in there if I wanted to,
+2:10
+but the tuple itself is immutable.
+2:13
+So I can't change or remove or add any values to this tuple.
+2:18
+I can make an empty tuple, just with empty parentheses.
+2:22
+And if I want to have a tuple with a single item in it,
+2:26
+I can't do this.
+2:29
+If I save that to a variable,
+2:31
+let's call this tup and I look
+2:34
+at type of tup.
+2:38
+It's an integer, Python doesn't recognize
+2:41
+that these parentheses are supposed
+2:43
+to be tuple parentheses not the parenthetical operator,
+2:47
+like if I had I don't know, some sort of expression,
+2:50
+one plus three times three,
+2:54
+and I wanted this to happen first, we put parentheses there,
+2:59
+it's the same context, the same operator,
+3:01
+the parentheses there.
+3:03
+So in order for it to realize, this is a one item tuple,
+3:07
+we need to add a comma at the end a trailing comma.
+3:11
+It looks a bit odd, but now if we run type of tup,
+3:16
+it's indeed a tuple instead of an integer.
+3:18
+We also can use the constructor function,
+3:20
+which is just called tuple, to create a tuple based off
+3:24
+of some iterable, like a string or a list.
+3:27
+So values in a tuple do not have to be unique,
+3:30
+they can have one, one, one, one, two, no problem,
+3:33
+I could have a list with some numbers in it,
+3:36
+and turn that into a tuple, just like that.
+3:41
+And now I have a tuple.
+3:43
+So you might be wondering what is the point of this?
+3:45
+It seems like a lot of work, to make a less powerful version
+3:49
+of a list, that has these restrictions,
+3:52
+we can't change them.
+3:54
+We can't add to them, we can't remove values
+3:56
+what's the point?
+3:57
+Well first of all, they're smaller,
+3:59
+it's not a huge difference,
+4:00
+but they are a little bit smaller and a little bit faster
+4:03
+at very large sizes, the difference does grow.
+4:07
+So they are more efficient if you're dealing
+4:10
+with lots and lots of values,
+4:11
+but most of the time we're not,
+4:13
+most of the time our tuples are relatively small.
+4:16
+So what is the advantage?
+4:17
+The main advantage is the fact that they are immutable,
+4:20
+which means that they can be hashed,
+4:22
+which means we can put them in sets,
+4:24
+and we can use them as keys in a dictionary,
+4:27
+which we can not do with lists, because lists are mutable.
+4:30
+We can change them.
+4:32
+So we've seen these before, when we have a dictionary,
+4:35
+do I still have my chickens dictionary?
+4:38
+Nope, that's a list here.
+4:40
+Chicken.
+4:42
+Alright, well let's add something to chicken.
+4:45
+Chicken of breed is going to be Silkie.
+4:50
+Alright, so now we have two elements
+4:52
+or two key value pairs in chicken.
+4:55
+When we do things like chicken.items,
+4:57
+which we've seen before,
+4:59
+it gives us back this collection
+5:02
+where each key value pair is a tuple.
+5:05
+So this could easily have been a list instead,
+5:08
+but tuples are better here,
+5:10
+for one thing they're slightly smaller,
+5:12
+they're also easier to read a lot of people think
+5:15
+when you have a collection,
+5:16
+like instead of nested lists
+5:17
+where you have square brackets everywhere,
+5:19
+here we can clearly see where each pair begins and ends.
+5:23
+But we've seen this before right where we had a for-loop
+5:26
+and we even extracted them or unpacked them,
+5:29
+We did key comma value or K comma V, in chicken.items,
+5:37
+like that, and then we'll just print K comma V.
+5:43
+So that right there, is working with the tuple.
+5:46
+So for each tuple inside
+5:48
+of this items collection we get back,
+5:51
+we wanna extract K and V.
+5:53
+The first thing will be K, the second thing is V.
+5:56
+So tuples are surprisingly useful mainly like I said,
+6:00
+because of the fact that they're immutable,
+6:02
+we can store them as keys in a dictionary.
+6:04
+As an example, let's say I want it to store coordinates
+6:08
+for a game board in a dictionary.
+6:10
+So I wanted to map like zero, zero,
+6:14
+and I want that to be mapped to maybe X or O,
+6:18
+if we're doing Tic-Tac-Toe, or maybe a color,
+6:20
+if we're playing a game where we have different colors
+6:22
+on a square grid, but let's do Tic-Tac-Toe.
+6:26
+So we'll have a Tic-Tac-Toe board,
+6:28
+where we have three by three,
+6:30
+I'll just go with board, which will be a dictionary.
+6:33
+And I'll use tuples,
+6:35
+so zero comma zero will be the top left,
+6:38
+and that will be set to let's say X,
+6:41
+and then we'll have zero comma one,
+6:44
+which will be set to maybe None.
+6:47
+And then zero comma two, will be set to O,
+6:52
+and I want to a full game board here,
+6:53
+but we'll just do one more row or part of one row.
+6:57
+So next we have one comma zero,
+7:00
+which will be set to X, and we'll do one comma one
+7:03
+which will be set to, O.
+7:06
+Okay so we have this partial game board here
+7:08
+where we're using a tuple, a collection,
+7:11
+it's a data structure as the key.
+7:14
+And that works
+7:15
+because these collections tuples are immutable.
+7:19
+And if I run this %run the file name is tuples.py,
+7:23
+and we look at board.
+7:25
+I can now retrieve from that board,
+7:28
+I can ask what is pair zero zero, or how about zero two?
+7:33
+And we get, O back, what is that zero zero, we get X.
+7:39
+So this is one of the main use cases
+7:40
+for tuples we can put them in sets as well,
+7:43
+they're immutable.
+7:45
+So it is restrictive, they can't change,
+7:47
+but if you are ever working with pairs or collections,
+7:51
+it doesn't just have to be two items as we've seen,
+7:53
+it could be a full collection of 20 or 50 or 100 values.
+7:57
+But if you know they're not going to change,
+7:58
+you don't need that order to change,
+8:00
+and you want to store them together somewhere,
+8:02
+especially if you wanna use them as a key in a dictionary
+8:04
+or an element in a set
+8:06
+where immutability is required tuples make a great choice.
+8:11
+As far as their methods, if we look at tuple,
+8:15
+there's really not much that we can do,
+8:17
+we've got count and index.
+8:20
+If we try running count on a tuple,
+8:22
+we pass in an argument,
+8:25
+like if this is tuple and I called .count of one,
+8:28
+it tells me how many times one occurs in that tuple,
+8:32
+and then we also have an index method,
+8:35
+so if I do this here and I do the same tuple
+8:38
+but how about index of three?
+8:42
+It's going to tell me the first index where three occurs
+8:45
+in that tuple which is index of two, zero one two.
+8:49
+If I did index of one, we get zero.
+8:52
+It occurs at the very first index.
+8:54
+So not very much to two tuples,
+8:57
+because you can't really change them that's the point.
+9:00
+You can check how many times the value occurs
+9:01
+and where it occurs, or at least where it first occurs.
+9:05
+And if we compare that with a list or we have this massive,
+9:08
+well it's not that massive
+9:09
+but comparatively multiple times the number
+9:12
+of methods compared to tuples, lists are a lot more powerful
+9:16
+or full featured,
+9:18
+but again we cannot use them in situation
+9:20
+to where we can use tuples.
+9:21
+And that's pretty much it for tuples,
+9:23
+they're pretty simple.
+9:24
+Use parentheses,
+9:25
+the one gotcha is if you have a single element tuple,
+9:28
+you need to add a trailing comma.
+9:30
+(soft music)

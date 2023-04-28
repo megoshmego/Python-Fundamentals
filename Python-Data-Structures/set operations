@@ -1,0 +1,506 @@
+can you please provide code for demonstrations of this
+that would be helpful in preparing for 
+my career as a deep learning AI SWE?
+
+
+
+Would you please evaluate the transcript I provide for its key terms, ideas, 
+concepts and their defintions. Would you also please include the video title 
+“set operations”, the subsection title "Python Data Structures", 
+and the section title "Python Introduction"?
+
+(upbeat music)
+0:04
+- [Instructor] Next, we're gonna talk more about sets.
+0:06
+In particular, there is a set of methods of operations
+0:11
+that we can perform between different sets.
+0:14
+And these are really cool.
+0:16
+They don't exist in JavaScript at the moment,
+0:18
+I think they're in the works.
+0:20
+But currently, there's no support,
+0:21
+you have to write these yourself.
+0:23
+These operations have to do with taking one or taking two
+0:28
+or more sets and calculating the union of those sets.
+0:31
+So a lot of this terminology, it comes from mathematics
+0:33
+where sets are a pretty common concept.
+0:36
+So the union of two sets is just everything
+0:39
+from those two sets put together, forming a new set,
+0:42
+where all duplicates are removed.
+0:45
+Then we have intersection, which is where we would find
+0:47
+whatever those sets have in common,
+0:49
+we have the difference between sets,
+0:51
+we'll go over these in turn.
+0:52
+But let's start with union, for example.
+0:55
+So I'm going to make two new sets.
+0:58
+To start, I'm gonna have a new set called lemon,
+1:01
+which will have sour and yellow,
+1:04
+and fruit and bumpy or rough,
+1:08
+then I'll have another set called banana,
+1:12
+which will have fruit and smooth, sweets.
+1:17
+I actually don't like bananas, so I don't know,
+1:19
+I guess they're kind of sweets.
+1:21
+They just tastes like banana garbage to me.
+1:24
+And then yellow, they're also yellow.
+1:26
+Okay, so we have two sets now.
+1:29
+And I'm gonna start by just loading this file,
+1:32
+it's called sets.py.
+1:34
+So present sign run sets.py.
+1:39
+All right, so I've got my two sets, lemon and banana.
+1:44
+To find the union between two sets,
+1:47
+there is a method called union.
+1:50
+But we also have this nice shortcut, we can use the pipe.
+1:54
+Just one pipe, not two.
+1:55
+So if I do lemon, union banana,
+2:00
+I get a set, a new set,
+2:02
+this is not a list, but it's a set that contains every value
+2:05
+from those two sets with the duplicates removed, of course,
+2:08
+because this thing we get back is a set,
+2:11
+we can't have duplicated values.
+2:13
+So bumpy, fruit, smooth, sour, sweet and yellow.
+2:17
+So the order does not matter here.
+2:19
+I did banana union lemon, we get the same result.
+2:24
+So we could save that to a variable, maybe call it all,
+2:28
+I don't know, all attributes.
+2:30
+What would you call those, bumpy adjectives?
+2:34
+Features?
+2:35
+Sure.
+2:37
+Equals lemon union banana.
+2:42
+Okay, so we also have a method called union,
+2:46
+and that works like this.
+2:47
+Banana.union, lemon.
+2:52
+And it will give us the exact same result.
+2:55
+Now there is a slight difference that I'll talk about
+2:57
+at the end of this video between doing this and doing this.
+3:01
+There is no difference when we're working with two sets,
+3:03
+but there is a difference if we're working
+3:05
+with something that is not a set.
+3:07
+But for now, let's move on.
+3:08
+So that's union, it combines two sets together.
+3:12
+We could also add on a third set as an example.
+3:16
+Let's say, this one won't be a variable.
+3:18
+It's just a new set we're creating for a different fruit.
+3:22
+What's another yellow fruit?
+3:24
+Maybe we'll do a different fruit that's not yellow.
+3:26
+So how about green?
+3:29
+And it will be for an apple, which will be tart.
+3:32
+Okay.
+3:35
+So we can chain those unions together.
+3:37
+And now we end up with one set
+3:39
+that has three different sets, all combined,
+3:43
+all duplicates removed.
+3:45
+Next up, we have the intersection.
+3:47
+Now the intersection is kind of like the middle part
+3:49
+of a Venn diagram.
+3:51
+So if we have a circle on the left, a circle on the right,
+3:53
+where do they overlap?
+3:55
+What are the elements in these two sets
+3:57
+that they have in common?
+3:59
+And the symbol we can use for that is an ampersand.
+4:03
+So if I do lemon, ampersand, banana,
+4:08
+we get fruits and yellow.
+4:09
+Those are the two things they have in common.
+4:12
+Lemon has fruit and yellow, banana has fruit and yellow.
+4:16
+So we also have banana or lemon.intersection,
+4:23
+and then pass in the other set.
+4:26
+And we get fruit in yellow as well.
+4:28
+So that's intersection.
+4:30
+Now we have some others, we have difference,
+4:33
+which we use the subtraction sign for,
+4:35
+which I think makes some sense
+4:37
+we're subtracting the difference.
+4:39
+And the order here does matter.
+4:41
+So difference is going to take the first set
+4:44
+and compare it to the second set.
+4:47
+And we'll get a new set containing the elements
+4:50
+or the values that are in the first but not the second.
+4:54
+So if we do lemon minus banana,
+4:59
+we get bumpy and sour.
+5:01
+So this is what they do not have in common.
+5:04
+Once you remove anything they have in common, basically,
+5:06
+once we remove the intersection, what's left?
+5:09
+Bumpy and sour.
+5:12
+At least when we do it this way,
+5:13
+if we do banana minus lemon,
+5:17
+we get smooth and sweet.
+5:20
+And we also have a particular method built in
+5:24
+called difference right there,
+5:26
+and then we just pass in banana, we get the same results.
+5:30
+Or if I do it the other way, banana.difference, lemon,
+5:35
+we get the same thing we had here.
+5:37
+So this is a shortcut.
+5:38
+At the end, again, I'll show you the slight difference.
+5:41
+And then we have this last operation,
+5:43
+which is called symmetric difference.
+5:46
+And if you ever get confused about what it means,
+5:49
+you can go to help, and then set.symmetric difference,
+5:54
+it is going to return the symmetric difference
+5:56
+of two sets as a new set.
+5:57
+Well, that's not very helpful.
+5:59
+But then there's a note down here,
+6:00
+the symmetric difference is all elements
+6:02
+that are in exactly one of the sets.
+6:05
+So not the overlap, not the difference.
+6:08
+But what elements only exist in one of the sets?
+6:12
+Take all of them and put them in a new set.
+6:15
+So if we did banana, and then the operator that we can use,
+6:20
+the shortcut is that caret banana, lemon,
+6:24
+we get a new set that contains bumpy,
+6:26
+smooth, sour and sweet.
+6:29
+So it's missing everything that was in the intersection,
+6:31
+which is just fruit and yellow.
+6:34
+And just like before, we have a built-in method,
+6:37
+a named method, not just this little operator
+6:40
+that we can use called symmetric difference.
+6:42
+Same thing here.
+6:44
+Let's do it the other way around.
+6:45
+So lemon.symmetric difference of banana.
+6:50
+And we get bumpy, smooth, sour and sweet.
+6:53
+The exact same thing we got when we did banana,
+6:56
+symmetric difference, lemon.
+6:58
+Okay, so those are the four set operations that we can do,
+7:02
+union, intersection, difference, and symmetric difference.
+7:08
+And I did mention a couple times that there is a difference
+7:11
+between the shortcut operators here and the named methods,
+7:15
+.union or .intersection and so on methods.
+7:18
+Let's talk about that now.
+7:20
+These shortcuts here,
+7:21
+these operators only work between two sets.
+7:24
+Now, obviously, all of these operations
+7:27
+only are going to involve sets at the end of the day.
+7:30
+But the methods, the named methods like intersection,
+7:32
+or .union will accept an iterable and turn it into a set
+7:37
+to then do the comparison with.
+7:39
+So as an example, let's say I had,
+7:41
+instead of just lemon and banana, I also have orange,
+7:47
+and orange will be a fruit.
+7:49
+Orange is bumpy.
+7:52
+Its color is orange, and it tastes sweet.
+7:57
+Most of the time, I guess.
+7:59
+It's kind of sweet, right?
+8:00
+But instead of making it a set, let's make it a list.
+8:05
+So now we have a list called orange.
+8:07
+I need to run that file again.
+8:09
+Run sets.py.
+8:12
+And I have my orange list.
+8:15
+Let's work with orange and lemon.
+8:18
+So if I try and do lemon, let's do intersection.
+8:22
+So lemon and orange, I'm going to get an error,
+8:26
+unsupported operand types for ampersand set and list.
+8:30
+Python does not like it.
+8:31
+If I instead do lemon. and then intersection,
+8:36
+and I pass in orange, it will turn orange into a set
+8:40
+or create a set based off of orange and then compare.
+8:44
+And that does work.
+8:46
+Now it doesn't work going the other way
+8:47
+because orange is a list,
+8:48
+and there is not an intersection method on lists.
+8:51
+It's only a set method.
+8:52
+So if I try that, we get an error.
+8:55
+There is no attribute intersection on a list.
+8:59
+So that's the main difference.
+9:00
+Otherwise, if we're working between two sets,
+9:03
+then there is no difference at all.
+9:05
+But using these named methods
+9:06
+is kind of annoying to have to type out.
+9:09
+But if you have some iterable that is not a set,
+9:12
+you can take advantage of this.
+9:13
+You can pass it in, it will be turned into a set,
+9:16
+a set will be created from it,
+9:18
+and that new set will be used to make the comparison.
+9:20
+And the same applies for all four of these methods.
+9:24
+So the named union method, intersection, difference,
+9:26
+and symmetric difference methods.
+9:29
+All right, so these can be a little bit tricky
+9:32
+to remember the exact syntax or the exact characters.
+9:35
+Remember, you can always use the named ones.
+9:37
+But also with some practice,
+9:39
+you'll get better, you'll get used to them.
+9:42
+These are a bit foreign,
+9:43
+because they don't exist in JavaScript.
+9:47
+So it's not as simple as converting append to push
+9:51
+or a push to append for a list versus array.
+9:54
+So it's not as simple as some of the JavaScript
+9:57
+to Python translations that we've done so far,
+9:59
+because these concepts aren't built into JavaScript,
+10:02
+but they're one of the best parts of working
+10:04
+with sets in Python.
+10:06
+You may not think that they're that useful at the moment,
+10:09
+because we're just doing these silly little examples
+10:11
+with sets, but as we make more progress,
+10:13
+and as you get more practice,
+10:15
+you'll come to see the value in these operators.
+10:18
+All right, so that's pretty much it for sets.
+10:20
+We've covered a lot.
+10:21
+Just the main takeaways here are that sets in Python
+10:24
+are very similar to the newish sets in JavaScript.
+10:28
+They are unordered collections of unique values.
+10:32
+And in Python, those values all have to be immutable,
+10:35
+strings, Boolean, numbers, and so on.
+10:38
+And that has to do with the implementation of sets,
+10:41
+and it's what makes them so fast.
+10:43
+Having those immutable elements inside of a set,
+10:46
+means that they can be hashed,
+10:48
+which means that we get constant time for adding,
+10:51
+retrieving and deleting.
+10:52
+And don't worry if this means nothing to you.
+10:54
+We will talk about big O notation later on in the course,
+10:57
+all you need to know is that this is good.
+10:58
+It's faster than using a list.
+11:01
+So sets very good in certain situations
+11:03
+where you don't care about order,
+11:05
+and you're okay not having duplicates.
+11:08
+To create one, we can use set literals, just curly braces,
+11:12
+where we have a comma separated list of values,
+11:14
+we can mix different data types,
+11:16
+it doesn't all have to be homogenous,
+11:18
+so we can mix strings and numbers and Booleans.
+11:21
+We also have a set constructor function,
+11:23
+which is most useful when you're trying to make a set
+11:25
+from a list or a set from a string.
+11:28
+We can use the in operator

@@ -1,0 +1,407 @@
+can you please provide code for demonstrations of this
+that would be helpful in preparing for 
+my career as a deep learning AI SWE?
+
+
+
+Would you please evaluate the transcript I provide for its key terms, ideas, 
+concepts and their defintions. Would you also please include the video title 
+“lists continued”, the subsection title "Python Data Structures", 
+and the section title "Python Introduction"?
+
+
+(gentle music)
+0:04
+- [Instructor] All right, so on to the data structures.
+0:06
+Let's start with lists, which we've briefly seen.
+0:09
+Remember they are the Python equivalent
+0:12
+of JavaScript arrays.
+0:14
+They are ordered collections of values.
+0:17
+So there's an ordered sequence, they are indexed.
+0:19
+We can change them.
+0:21
+So they're not set in stone.
+0:22
+They're not constant, we can swap out values,
+0:25
+we can add values on, we can remove things from a list,
+0:28
+just like a JavaScript array.
+0:30
+Although some of the method names, if not,
+0:32
+most of the method names are different.
+0:34
+We do have a bunch of methods which we'll cover.
+0:38
+And if you're not familiar
+0:39
+with big O notation here, don't panic.
+0:41
+All that you need to know is that it takes time to add
+0:45
+or to delete or to search for something in an array
+0:48
+or a list, JavaScript or Python it doesn't matter.
+0:51
+Let's say there's a hundred items in there.
+0:53
+If we're trying to add something to the beginning
+0:56
+of an array or a list, every single item has
+0:58
+to be shifted over.
+1:00
+So whatever the length of theory is, that's the end here.
+1:03
+That's how many operations it could potentially take.
+1:06
+Whereas if we add something at the end or delete
+1:09
+from the end, nothing has to be shifted so
+1:11
+it's a single operation.
+1:14
+Long story short, it takes more work to search, add
+1:17
+and delete unless we are adding or deleting
+1:19
+from the very end.
+1:21
+That doesn't mean you shouldn't use them.
+1:22
+They're are one of the most common,
+1:23
+if not the most commonly used data structures
+1:25
+in Python and in JavaScript.
+1:28
+So we've seen, there is a literal syntax
+1:30
+to make a list where we use the exact same square brackets
+1:33
+that we do in JavaScript.
+1:35
+So I'm working in a new file here, probably just do this
+1:38
+in IPython first, we can make a list of scores,
+1:43
+have a bunch of numbers, 45, 99, 100, 78 and 88,
+1:50
+just like that.
+1:51
+Hence, that makes me a new list.
+1:54
+But we also have another way of creating a list using
+1:57
+the constructor function list, which we've seen before,
+2:00
+when I was talking about ranges.
+2:02
+So whatever we pass in, it needs to be an iterable
+2:05
+and we'll get a new list that is based upon iterating
+2:09
+over that iterable.
+2:11
+So we could pass in a string list of, hello
+2:18
+and we get one character per element in the list.
+2:22
+We also can do this where we have list of a range,
+2:25
+so 10 to, I don't know, 20
+2:28
+in jumps of two, which we've also seen already.
+2:33
+And we get 10, 12, 14, 16, 18 a range as an iterable.
+2:37
+It will be iterated over and for each number
+2:39
+that it returns, it's added into a new list.
+2:42
+One really nice operator in Python is the in operator,
+2:47
+which allows us to check if a given element
+2:49
+is contained in a list.
+2:52
+It also works on other structures,
+2:54
+but for now we're talking about lists.
+2:56
+So let's say I had a list.
+2:58
+What am I doing?
+2:59
+I don't want to type list.
+3:00
+Let's have a list called, vegan_no_nos.
+3:07
+And this will be a list of strings of foods
+3:11
+that vegans can eat.
+3:13
+So eggs, I guess meats is an obvious one, dairy
+3:19
+I'll just say milk and let's do one more eggs, meat, milk,
+3:23
+I guess fish does that fall under meat
+3:25
+or is that its own thing?
+3:27
+Whatever.
+3:28
+Oh, actually let's add figs.
+3:30
+Figs are apparently not vegan, because in order for a fig
+3:34
+to be fertilized, I think a wasp has to die inside
+3:37
+of the fig or something, who knows?
+3:39
+Maybe that could be a complete urban legend,
+3:41
+but I remember someone telling me that recently.
+3:44
+So we have a list and then if we wanted to check,
+3:47
+if some ingredient was in vegan_no_nos.
+3:50
+If we were in JavaScript land we would do something like,
+3:54
+index of, or includes, where it's a method we have to call.
+3:59
+But with Python, it's really easy.
+4:02
+All we need to do is call in.
+4:04
+Let's make another list called pie ingredients.
+4:09
+And our pie will have flour, it will have apples
+4:14
+and it will have sugar.
+4:16
+And what else goes into a pie?
+4:19
+Butter, I guess I shouldn't put butter cause it's not
+4:21
+on our list.
+4:22
+Let's say there's an egg or eggs in there as well.
+4:26
+And then afterwards we also have some salt.
+4:29
+Okay.
+4:30
+So if I wanna iterate over pie ingredients and check
+4:33
+if any of these elements are non-vegan,
+4:37
+I could do it very easily for, and then we'll go
+4:40
+with food in pie ingredients.
+4:45
+We're going to check if food in vegan_no_nos,
+4:53
+we will print, OH NO, CANNOT EAT THAT.
+5:01
+Let's make this an F string CANNOT EAT FOOD
+5:07
+IT'S NOT VEGAN, okay.
+5:12
+Otherwise, widen else print YUM, I LOVE FOOD, like that.
+5:22
+Okay, Long example here but all we have to do to check
+5:26
+if something is in a list is use the in operator.
+5:30
+Let's try it out.
+5:32
+So this file I worked in is called lists.
+5:35
+So we'll do %run lists.py
+5:38
+We get, YUM, I LOVE flour!
+5:39
+YUM, I LOVE apples!
+5:40
+YUM, I LOVE sugar!
+5:41
+OH NO, CANNOT EAT eggs! IT'S NOT VEGAN!
+5:44
+YUM, I LOVE salt!
+5:47
+And that's pretty much it, so in is really nice
+5:50
+it's a short way of checking if something is in a list.
+5:53
+It also works for strings, just show you that briefly.
+5:57
+If I had a list or a string of banned characters
+6:01
+or special characters and our special chars will be,
+6:06
+I don't know, something like that.
+6:08
+We can check if a given character is in there
+6:11
+in special chars, we get true.
+6:14
+If we instead check to see if exclamation point
+6:17
+is in there, it's not.
+6:20
+So it works with strings, it works with lists
+6:22
+it also works with some other things we'll see later on.
+6:24
+What else do we have with lists?
+6:26
+Of course they are indexed just like in JavaScript
+6:29
+and those indexes, indices start at zero, just like
+6:33
+in JavaScript as well.
+6:35
+So if I want that first element from
+6:37
+what do we have vegan_no_nos, if I want the first item
+6:42
+I access it using square brackets and zero.
+6:45
+If I want the second one it's index of one, two, three.
+6:50
+And what happens when we go out of bounds in Python?
+6:54
+What did we get?
+6:55
+An error, list index out of range.
+6:58
+Compare that to Java script, if we have some array,
+7:02
+one, two, three, save this to a variable const nums
+7:07
+and we do nums of three.
+7:10
+We just get undefined JavaScript doesn't complain,
+7:13
+it just says, there's nothing there.
+7:14
+Python on the other hand says, hang on you can not do that
+7:18
+you're freaking me out, I don't have that index
+7:21
+that's way out of range.
+7:24
+So we also can use negative indices, which is something
+7:27
+I really like.
+7:29
+It will start counting backwards from the end of the list.
+7:33
+So if we go back to vegan_no_nos and we do negative one,
+7:40
+let's just look at vegan_no_nos again.
+7:42
+You'll see that it gives us the first element counting
+7:45
+from the back or from the end of the array.
+7:48
+So this can be nice in certain algorithms this is something
+7:52
+you can take advantage if you're trying to swap let's say
+7:55
+the first and the last and then the second and
+7:57
+the second to last, you can use negative indices
+8:00
+to help you do that.
+8:02
+And we can continue to do that, so negative two,
+8:05
+negative three, negative four, and then negative five
+8:09
+is our last one.
+8:10
+If we try negative six, what happens?
+8:12
+Once again out of range, there is no index at negative six.
+8:17
+So that does not work in JavaScript to be clear just
+8:20
+in case you weren't sure we have our nums
+8:22
+if I try negative one, undefined.
+8:26
+We can also access a particular index and mutate the list at
+8:30
+that index we can change the element and update the value.
+8:35
+So let's clear this, we have vegan_no_nos let's say
+8:39
+I want to change I don't know, milk to instead be dairy.
+8:43
+I could do vegan_no_nos of index zero one two, equals dairy.
+8:50
+And now if we look at vegan_no_nos we have dairy.
+8:54
+What I cannot do, that I can do in JavaScript
+8:57
+is add on a new element using an index.
+9:01
+So the next index here would be zero one, two, three, four.
+9:05
+Right now there is no vegan_no_nos of index five
+9:08
+and I can't set one.
+9:09
+I can't say vegan_no_nos of index five is butter.
+9:15
+I get an error, list assignment index out of range.
+9:18
+Now that doesn't mean you can't add on to a list,
+9:21
+you just can't add on this way.
+9:23
+We'll see another way shortly there are some methods
+9:25
+we can use to add to the end of a list.
+9:29
+Okay, I think it's a good place to stop.
+9:31
+So what we saw so far is that we can make lists using
+9:34
+the square brackets, literal syntax.
+9:37
+We can also use the list constructor function,
+9:39
+pass in some sort of iterable.
+9:41
+Lists are index, just like they are in JavaScripts,
+9:44
+starting at zero.
+9:45
+And we also have access to negative indices,
+9:48
+which will count backwards from the end of the list.
+9:51
+We can update elements using the index, but we can't add to
+9:54
+the end of an array we can't grow an array
+9:57
+by adding a new index in.
+9:59
+So there's more to lists next we're going to talk about one
+10:01
+of my favorite features, something that
+10:03
+we don't have access to in JavaScript, slicing.
+10:06
+(gentle music)
