@@ -1,0 +1,291 @@
+Would you please evaluate the transcript I provide for its key terms, ideas, concepts and their defintions. Would you also please include the video title “Truthiness and falsiness”, the subsection title "Python Introduction", and the section title "Python Fundamentals"?
+
+
+0
+(upbeat music)
+0:04
+- [Instructor] The last topic we have
+0:06
+around Conditional Logic
+0:07
+and Booleans, is truthiness and falseness.
+0:11
+So remember in JavaScript,
+0:13
+specific values have a built-in falseness,
+0:16
+a falsely quality to them.
+0:18
+Things like zero, empty string, undefined,
+0:20
+null, not a number false,
+0:23
+we can verify this if you just write not not,
+0:26
+and then an empty string.
+0:29
+So we're negating at once
+0:30
+and then one more time we can see
+0:32
+that empty string is indeed false.
+0:35
+If we had not not any other string, it's truthy
+0:39
+not not zero is false,
+0:41
+not not null, false,
+0:44
+not not undefined, okay.
+0:48
+And then everything else
+0:49
+that's not listed here is considered truthy.
+0:51
+And that includes things like an empty object
+0:54
+and an empty array,
+0:55
+which sometimes can be confusing.
+0:58
+And that's actually not the case in Python,
+1:01
+so in a lot of other languages an empty array
+1:03
+or whatever the array equivalent is in Python,
+1:06
+it's a list.
+1:07
+If it's empty, it's considered falsely,
+1:08
+but in JavaScript, it's truthy.
+1:11
+So in Python, these are the values that are falsy,
+1:14
+zero, 0.0, a float zero, empty string,
+1:19
+None, which we haven't talked about and False.
+1:23
+And we can verify this in a couple of different ways.
+1:25
+You could do not not, empty string for example,
+1:30
+and we get False,
+1:31
+but we put something in there, we get True.
+1:34
+Not not zero, we get False.
+1:36
+Not not one, is True.
+1:38
+You could also just write a conditional like,
+1:40
+if 12 print, truthy
+1:48
+and we get truthy.
+1:50
+If we instead revise that to be, if zero,
+1:54
+and I go down to the bottom and hit enter,
+1:56
+nothing prints out.
+1:58
+Okay, so numbers strings,
+2:00
+basically anything I haven't called out here,
+2:02
+is going to be truthy.
+2:04
+Zero, 0.0, empty string, False or all falsy,
+2:08
+None is kind of the equivalent of null in Python.
+2:13
+It represents the value of nothingness.
+2:16
+It's a actual type.
+2:18
+If we do type of None,
+2:22
+we get this None type.
+2:23
+None is actually an object,
+2:25
+It's something we'll come back to later
+2:26
+when we talk about object oriented programming in Python,
+2:29
+but we can see that it is falsy,
+2:31
+if we do not not none, it's False.
+2:34
+We can use None, just like we can use null
+2:36
+to get to set a variable.
+2:38
+How about DB connection equals None,
+2:41
+if I have no connection to a database,
+2:43
+but eventually I hope I will,
+2:46
+I could initialize it to be None first.
+2:49
+And then once we have a connection,
+2:51
+there'd be some database connection object
+2:53
+or something that would take the place of None.
+2:55
+So it's just a very clear value.
+2:58
+And personally, I prefer the name of None
+3:00
+rather than null.
+3:02
+null is, I guess a little less intuitive,
+3:04
+None is very clear,
+3:06
+even though they both essentially mean the exact same thing,
+3:09
+we don't use null in Python,
+3:10
+we use None capital N
+3:12
+just like we have capital T, True,
+3:14
+capital F, False.
+3:17
+So the biggest difference in Python,
+3:20
+aside from the fact that we don't have null, we have None,
+3:23
+but the biggest difference in the truthiness,
+3:25
+falseness realm, is that empty structures,
+3:28
+like an empty list,
+3:30
+an empty dictionary, which we haven't talked about,
+3:31
+an empty set, which we also haven't talked about,
+3:34
+but I'm just putting them here
+3:35
+because it's best to discuss them all together
+3:37
+in terms of truthiness and falseness,
+3:39
+all three of these examples are inherently falsy.
+3:43
+So if we verify that not not, an empty list, it's False,
+3:47
+as soon as we put something in there, it's True.
+3:51
+Not not an empty dictionary,
+3:52
+we haven't talked about dictionaries,
+3:54
+but they're kind of like JavaScript objects,
+3:56
+literals key value pairs, it's falsy.
+4:00
+Compare that again to JavaScript,
+4:02
+we have not not empty array, that's truthy,
+4:05
+in JavaScript's mind,
+4:07
+the fact that this is an object period,
+4:09
+that it's a thing, means that it's truthy.
+4:11
+It doesn't matter if it has no contents.
+4:13
+In Python, it does matter.
+4:16
+There's a difference, this is something that is empty,
+4:19
+even though it is a thing, it's a list,
+4:21
+It has no stuff inside of it, no contents,
+4:24
+so it's considered falsy.
+4:26
+And this is nice because you can do things like,
+4:29
+let's say we have a jobs list
+4:32
+that has one job in it, walk dog.
+4:35
+(keyboard clicking)
+4:37
+And then we could write,
+4:38
+if jobs, print,
+4:45
+can't go home yet,
+4:48
+more work to do.
+4:52
+So there's a job in there,
+4:54
+can't go home yet, more work to do.
+4:56
+But now if jobs is an empty list
+4:58
+and we run that again,
+5:00
+we can go home, there's no more work to do.
+5:02
+Versus in JavaScript, it wouldn't work quite as easily.
+5:06
+If we had, let jobs equals an empty array,
+5:11
+and then we ran,
+5:12
+if jobs console.log,
+5:17
+can't go home,
+5:20
+we still get can't go home.
+5:22
+So we you need to check if jobs.length,
+5:25
+which would give us zero, which is falsely,
+5:27
+and nothing prints up.
+5:30
+So small difference, but an important one to be aware of.
+5:33
+So to summarize all of that in Python,
+5:36
+zero, 0.0, the float, empty string,
+5:39
+it doesn't matter if it's single or double or triple quotes,
+5:42
+None and False are all falsy,
+5:44
+as well as an empty list, an empty dictionary
+5:46
+and an empty set,
+5:47
+we haven't talked about those two,
+5:49
+we've barely talked about lists.
+5:51
+If you're not, we will spend a lot more time
+5:52
+with Python data structures in a bit.
+5:55
+Everything else is going to be truthy.
+5:57
+So a non empty string, a non empty list,
+5:59
+a dictionary, a set, a number that's not zero,
+6:02
+and then of course the value true itself.
+6:05
+Okay.
+6:06
+(upbeat music)

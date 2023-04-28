@@ -1,0 +1,308 @@
+Would you please evaluate the transcript I provide for its key terms, ideas, concepts and their defintions. Would you also please include the video title “Indentation”, the subsection title "Python Introduction", and the section title "Python Fundamentals"?
+
+0:00
+(soft music)
+0:04
+- [Instructor] Before we go any further,
+0:05
+we need to talk about indentation,
+0:07
+a really important distinction between Python
+0:10
+and many other languages, including JavaScript.
+0:14
+So we often use curly braces
+0:16
+in some programming languages to denote code blocks,
+0:19
+like we do in JavaScript.
+0:21
+In order to make it clear that these two lines belong inside
+0:25
+of this conditional, we use those curly braces.
+0:28
+And we typically indent to make things nicer
+0:31
+and easier to understand.
+0:34
+But it's just about readability.
+0:35
+It doesn't impact the functionality
+0:37
+of the code or the behavior.
+0:40
+So we could also write it this way, in JavaScript at least.
+0:43
+We have the two curly braces.
+0:45
+That's all that matters.
+0:46
+The indentation is there just so that we don't go crazy.
+0:49
+So we definitely don't recommend
+0:51
+you write your code this way.
+0:53
+Python is different.
+0:54
+In Python, we don't use those curly braces for blocks.
+0:58
+All that matters is the indentation.
+1:01
+And this is a pretty significant difference from JavaScript.
+1:04
+In this code here, these indentations are what tell Python
+1:09
+these two lines belong as part of this conditional.
+1:13
+They will only run if age is greater than or equal to 18.
+1:16
+And by the way, we haven't talked about conditionals yet,
+1:19
+but I'm just starting with indentation.
+1:21
+Then we'll come back and talk about conditionals.
+1:23
+This is very different than the code down here.
+1:26
+In this case, we have our conditional,
+1:29
+and this one print line, this print function call will run
+1:32
+if age is greater than or equal to 18.
+1:35
+And register to vote always runs,
+1:38
+very slight difference
+1:40
+in terms of the actual syntax we type,
+1:43
+but a very major difference when we actually run this code.
+1:47
+So indentation is crucial in Python.
+1:49
+That is, as I've said already,
+1:51
+one of the most important differences,
+1:53
+one of the things that will take you maybe the longest
+1:55
+to get used to.
+1:57
+But because in JavaScript we should already be indenting
+2:00
+our code in ways that hopefully makes it more readable,
+2:04
+it shouldn't be that major of a shift.
+2:07
+Typically in JavaScript,
+2:09
+we use two or four spaces for indentation.
+2:12
+In Python, everyone agrees
+2:15
+it should always be four spaces.
+2:17
+However, Python doesn't actually care.
+2:19
+You could indent everything with two spaces.
+2:22
+You just wanna be consistent,
+2:23
+but most editors are going to default to four.
+2:26
+IPython will default to four spaces.
+2:29
+So that's what you want to be using.
+2:31
+But let me just show you how this works.
+2:33
+So I have IPython open over here.
+2:35
+We haven't talked about conditionals,
+2:37
+but I'm gonna go ahead and show you something very quickly.
+2:40
+Let's make a variable called age.
+2:42
+We'll set it to 17.
+2:44
+In IPython, if I type,
+2:47
+you probably already saw that.
+2:48
+I'm defaulting to JavaScript already with those parentheses.
+2:51
+We don't need that in Python.
+2:53
+If I do something like if age is less than 18,
+2:58
+if I hit Enter, IPython automatically indents me
+3:02
+because it assumes that I want to write some code
+3:05
+that is part of this conditional block.
+3:08
+So I'll write something like, print "you are a child."
+3:14
+And in order to get out of this, if we go to the last line
+3:18
+in IPython and I hit Enter, it will run.
+3:21
+You are a child.
+3:23
+If I write another line down here print
+3:26
+"come back when you are 18 or older"
+3:35
+like that,
+3:36
+and I hit Enter,
+3:38
+both of those lines run because age is 17.
+3:41
+If I hit the up arrow and I instead change this,
+3:45
+oops, not like that.
+3:47
+If I instead do this here,
+3:49
+and I changed the value of age, so let me quickly do that.
+3:55
+Let's set age now to be 20,
+3:59
+And I recall this code, age is now not less than 18,
+4:03
+so this code will not run, but this will always run.
+4:06
+It's not associated in any way with this conditional.
+4:10
+And so we always get
+4:11
+"come back when you are 18 or older"
+4:12
+even though age is 20.
+4:15
+Another important thing here
+4:16
+is that you'll actually get an error
+4:19
+if you don't have some indentation here.
+4:21
+If I just hit Enter,
+4:23
+it tells me "expected an indented block"
+4:26
+but it didn't get one.
+4:27
+What's going on,
+4:28
+well, we have a conditional.
+4:30
+In Python, think of it in JavaScript,
+4:33
+if you had a conditional statement
+4:35
+with no code associated with it,
+4:37
+you just had if age less than 18 and then nothing else,
+4:41
+it's an error.
+4:43
+Also, just to show you this,
+4:45
+if you had two spaces, it's still going to work.
+4:51
+It works fine.
+4:51
+We don't get anything because age is not less than 18.
+4:56
+If we had three spaces, it works fine.
+4:58
+But the default, the standard, whenever I start typing,
+5:02
+at least in IPython and in VS Code and I format the code.
+5:06
+Let's do if age,
+5:07
+how about just if three equals three.
+5:13
+Automatically it indents me four spaces.
+5:15
+We can count them.
+5:17
+There we go.
+5:18
+What we have is four,
+5:19
+one, two, three, four,
+5:21
+and then we can write some code in here.
+5:22
+Whatever it is, we'll just print true.
+5:28
+And there we go.
+5:30
+So the indentation matters.
+5:31
+You will see this all the time.
+5:33
+So not just with conditionals,
+5:35
+but also functions and classes and loops.
+5:38
+This is something that we'll see over and over and over.
+5:41
+And just as a quick demonstration in VS Code,
+5:44
+if I start typing something, let's do,
+5:47
+I'm in a Python file by the way, test.py.
+5:50
+We'll talk about running code from a file,
+5:52
+but if we set something like color equals purple.
+5:56
+And then I have my conditional.
+5:58
+If color equals, I don't know,
+6:02
+green and I hit Enter
+6:05
+and I type some code, print green, and I save,
+6:10
+it automatically formats me to four spaces.
+6:14
+One, two, three, four.
+6:16
+Okay, so we haven't talked
+6:17
+about running code or executing a file yet.
+6:20
+We'll stick to IPython for a little longer,
+6:22
+but just remember indentation matters.
+6:24
+That is a significant change from JavaScript.
+6:27
+It makes your code nice and easy to read,
+6:30
+but it can be a bit of a headache when you're switching
+6:33
+between JavaScript and Python.
+6:34
+And you're maybe getting lazy
+6:37
+about indentation in JavaScript.
+6:39
+That's not going to fly in Python,
+6:40
+so you have to be careful.
+6:41
+But as long as you follow the rules,
+6:43
+it makes your code nice and clean and easy to read.
+6:46
+Okay.
+6:47
+(soft music)

@@ -1,0 +1,408 @@
+Would you please evaluate the transcript I provide for its key terms, ideas, concepts and their defintions. Would you also please include the video title “While loops”, the subsection title "Python Introduction", and the section title "Python Fundamentals"?
+
+0:00
+(upbeat music)
+0:04
+- [Instructor] Welcome back. Next up.
+0:05
+Let's talk about looping in Python.
+0:07
+So the first loop we'll take a look at, should be familiar.
+0:10
+We have a very similar equivalent in JavaScript.
+0:13
+It is the While Loop.
+0:15
+So a while Loop in Python works the same way.
+0:17
+We have some condition.
+0:18
+And while that condition is true, the loop continues to run.
+0:21
+The code inside will run
+0:23
+and you want to make sure you're avoiding infinite loops
+0:25
+as always.
+0:26
+So we need to make sure this condition at some point
+0:28
+will be false.
+0:30
+So we'll do a simple example over here.
+0:32
+How about we have some variable
+0:34
+I'm in a new file called loops.py by the way,
+0:37
+figured it's easier to write this in a file
+0:39
+rather than using IPython.
+0:41
+So loops.py why don't we loop from
+0:44
+one to 100
+0:46
+by groups of 10 or zero to 100.
+0:48
+So we'll start with num set to zero.
+0:51
+See that semi-colon so hard to get rid of that JavaScript
+0:56
+when you're switching between the two.
+0:58
+Okay. So num equals zero.
+1:00
+And then
+1:01
+while num is less than or equal to 100,
+1:05
+we need our colon.
+1:07
+And then we indent.
+1:08
+And for some reason, my tab size is set to two right now.
+1:12
+it's usually set to four, but as soon as I type and I save
+1:14
+it goes to four in case you're wondering
+1:17
+I'll work on fixing that, let's see where's that.
+1:21
+Okay, there we go.
+1:22
+Should it be good now, let's verify.
+1:24
+Okay. So while num is less than or equal to 100,
+1:28
+we will print
+1:29
+num.
+1:31
+And then afterwards
+1:32
+we want to make sure we are detrimenting num.
+1:35
+So if we're starting at zero, I mean, incrementing.
+1:38
+So num equals num plus we'll do 10 each time.
+1:43
+So we should start with zero.
+1:45
+Num is less than or equal to 100 zero is less than 100.
+1:48
+So we print zero.
+1:49
+Then we add 10 and we should keep looping.
+1:52
+And then at the end, we'll print all done.
+1:57
+Let's run this file.
+1:58
+I'll do it from IPython.
+2:00
+We need that percent run and then loops.py.
+2:05
+There we go.
+2:06
+And we get zero 10
+2:08
+20, 30, 40, 50, 60, 70, 80, 90,100, all done.
+2:12
+So very similar to JavaScript.
+2:14
+If this was Java script
+2:16
+the While Loop portion would just be
+2:17
+while num is less than or equal to 100.
+2:19
+And then we would have our curly braces.
+2:21
+We'd do console.log.
+2:23
+Of course instead.
+2:24
+And then we would change num probably do minus equals 10
+2:28
+or plus equals.
+2:29
+Why do I keep doing minus?
+2:30
+It should be plus equals so no curly braces.
+2:34
+We don't have to have those parenths.
+2:36
+We still use the wild keyword
+2:38
+and we indent whatever we want to be inside of this loop.
+2:43
+Speaking of the incrementing here num plus 10.
+2:47
+We could also just do plus equals 10
+2:50
+just like we would in JavaScript.
+2:52
+Run it again.
+2:53
+We get the exact same output.
+2:55
+However, what we can not do if I wanted to increment by one
+2:59
+for example, we can do numb plus equals one.
+3:02
+Now num is 111, but we cannot do numb plus plus
+3:07
+the urinary operator that we use in JavaScript
+3:09
+plus plus, and minus minus,
+3:11
+those don't exist in Python.
+3:14
+So we need to do plus equals one
+3:16
+if you want it to do plus equals one
+3:18
+if you want to increment by one
+3:20
+no shortcut, same thing with detriment.
+3:22
+No minus minus.
+3:24
+Okay. So that's a relatively simple while loop.
+3:26
+We also have a keyword called break
+3:29
+just like we do in many other languages
+3:31
+including JavaScript
+3:32
+which we can use to break out of the loop at any point.
+3:35
+So if I want to do this would be kind of redundant
+3:37
+but I could do something like if
+3:39
+don't need those parenths, if numb
+3:41
+equals
+3:42
+50
+3:44
+break.
+3:47
+So we're going to print all the nums.
+3:48
+But as soon as we hit 50, we're done
+3:51
+and we'll print out all done.
+3:53
+And if I run that now, we get zero 10, 20, 30, 40, all done.
+3:58
+We hit 50.
+3:59
+We broke before we printed 50.
+4:02
+Now, why would you do this?
+4:03
+Why not just slope from zero to 50?
+4:06
+That's a good question.
+4:07
+I'm just showing you how break works.
+4:09
+Let's do a different type of loop
+4:11
+that runs an indefinite number of times.
+4:13
+And to help us out,
+4:14
+I'm going to introduce a built-in function called input.
+4:17
+So input is a way of getting user input
+4:19
+from the command line, from the terminal.
+4:22
+So if I type something like
+4:24
+how about guess equals input,
+4:28
+enter your guess.
+4:30
+And I run this right now
+4:32
+run loops.py it now asks me to enter my guess.
+4:36
+I'll enter some number.
+4:38
+And if we look at guess
+4:40
+it's now been set to the string
+4:43
+40123,
+4:44
+exactly what I entered.
+4:46
+If I wanted it as a number,
+4:47
+I could cast it as an integer or a float.
+4:50
+So let's use that and make a very simple guessing game.
+4:53
+What we're going to do is loop.
+4:55
+We're going to have a target number.
+4:56
+Let's say target equals 37,
+5:00
+and then we'll have guess
+5:01
+which we can initialize to none or to zero
+5:05
+or we could initialize it to input at the beginning.
+5:09
+Sure we'll do, eh, let's let's have it start as none.
+5:13
+Then we're going to loop
+5:14
+while guess is not equal to target.
+5:19
+We're going to ask the user to guess again.
+5:21
+So guess equals input.
+5:23
+Please enter a guess.
+5:28
+Okay. Now there is one problem which we already saw,
+5:32
+which is that we get a string back
+5:35
+and we'll be comparing a string here
+5:37
+guess to target, which is a number.
+5:40
+So what I'll do is also say guess equals
+5:46
+int
+5:47
+of guess.
+5:50
+And then at the end, why don't we print all done.
+5:55
+Let's see if this works
+5:57
+I'll run this
+5:58
+run loops.py enter a guess 20,
+6:02
+nope
+6:02
+34, five five, five, five,
+6:06
+12, and then 37,
+6:08
+all done.
+6:10
+So this loop runs an indefinite number of times.
+6:12
+We could also build in
+6:13
+a little short circuit if somebody enters Q
+6:16
+or quit, let's break out of the loop.
+6:20
+So once we get a guess
+6:22
+but before we turn it into a number,
+6:24
+let's check,
+6:26
+If guess equals
+6:28
+Q
+6:29
+or guess
+6:31
+equals,
+6:32
+why can I not spell guess?
+6:33
+Not quess
+6:36
+equals quit.
+6:37
+We will break.
+6:40
+Let's try it again.
+6:43
+Oh. I need two equal signs, not assignment.
+6:46
+Hopefully you saw that before me.
+6:48
+So enter a guess.
+6:49
+We'll go with 10, 12,
+6:52
+23
+6:53
+45. Oh, I'm tired of this.
+6:55
+I'm going to quit.
+6:56
+And there we go.
+6:57
+One more time.
+6:58
+If I type quit, it also works.
+7:01
+Now there is an issue.
+7:02
+If I type anything that is not castable to an integer,
+7:06
+it doesn't work so well.
+7:07
+We can't convert it to an int
+7:09
+but that's beyond the scope of what we're doing here.
+7:11
+So we saw we can have a while loop
+7:13
+that is going to run a set number of times
+7:15
+or a while loop that runs an indefinite number
+7:17
+of times.
+7:18
+Depending on in this case user input.
+7:21
+But it could also depend on random numbers
+7:23
+or information coming back from an API
+7:26
+or something, some sort of interface.
+7:29
+Anyway, we have our wild keyword colon
+7:33
+after some condition and then some indented code
+7:36
+and we can break out at any point.
+7:38
+Of course we could nest wild loops inside of each other.
+7:41
+I won't waste your time with an example of that,
+7:43
+but just like JavaScript we can nest loops.
+7:46
+So that's one type of a loop, very similar
+7:48
+to JavaScripts While Loop, just a little bit cleaner.
+7:51
+Next, we're going to talk about four loops
+7:53
+in Python.
+7:54
+Which are quite a bit different
+7:55
+than four loops in JavaScript.
+7:57
+(upbeat music)

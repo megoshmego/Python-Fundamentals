@@ -1,0 +1,38 @@
+Video title: Boolean Operators
+Section title: Python Fundamentals
+Subsection title: Python Introduction
+
+The instructor talks about Boolean operations in Python and how they are represented by English words (and, or, not) instead of symbols. They work in the same way as in JavaScript. The instructor demonstrates how these operators work with simple examples of True and False. They then move on to more complex examples with variables and conditionals. The instructor also talks about operator precedence and short-circuit operators. The video concludes with a comparison of Python's Boolean operators with those of JavaScript.
+
+Sure, here's some code examples that demonstrate Boolean operators in Python:
+
+Example 1: Using Boolean operators with hard-coded values
+```
+# Using Boolean operators with hard-coded values
+a = True
+b = False
+print(a and b)  # Output: False
+print(a or b)   # Output: True
+print(not a)    # Output: False
+```
+
+Example 2: Using Boolean operators with variables
+```
+# Using Boolean operators with variables
+x = 102
+print(x == 103 or x > 100)  # Output: True
+
+age = 68
+if age < 10 or age >= 65:
+    print("Your ticket is $5")
+else:
+    print("Your ticket is $10")
+```
+
+Output:
+```
+True
+Your ticket is $5
+```
+
+I hope these examples help you in your preparation for a career as a deep learning AI SWE!

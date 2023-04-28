@@ -1,0 +1,41 @@
+The video title is "Conditional Logic", and the subsection title is "Python Introduction", which falls under the section titled "Python Fundamentals". In the video, the instructor discusses running Python code from a file, and the two ways to do this - executing it using Python 3 from the command line, or using %run followed by the name of the file in IPython. The instructor shows an example of a .py file containing code that prints out "You cannot come in" and explains that the code can be run using either of the two methods described. The instructor then adds more code to the file, which checks if a person's age is greater than or equal to 18 and allows them entry into a club if so, and increments the number of guests in the club. The %run command is then used to run the code from within IPython, allowing the instructor to inspect and interact with the code after it has run. The instructor concludes the video by mentioning that the next topic to be covered is conditionals and the different components of a conditional statement.
+
+
+Sure! Here is an example of how to run a Python file from the terminal:
+
+```python
+# myscript.py
+print("Hello, world!")
+```
+
+Open a terminal and navigate to the directory where the `myscript.py` file is located. Then run the following command:
+
+```
+python3 myscript.py
+```
+
+This will execute the code in `myscript.py` and output `Hello, world!` to the terminal.
+
+And here is an example of how to use `%run` in IPython:
+
+```python
+# myscript.py
+age = 19
+guests = 0
+
+if age >= 18:
+    print("You can come in")
+    guests += 1
+else:
+    print("You cannot come in")
+
+print(f"Number of guests: {guests}")
+```
+
+Open IPython and navigate to the directory where the `myscript.py` file is located. Then run the following command:
+
+```
+%run myscript.py
+```
+
+This will execute the code in `myscript.py` and output `You can come in` and `Number of guests: 1` to the terminal. You can also inspect the values of `age` and `guests` in IPython after running the script.

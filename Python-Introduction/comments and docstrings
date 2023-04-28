@@ -1,0 +1,38 @@
+Title: Comments and Docstrings
+Section Title: Python Fundamentals
+Subsection Title: Python Introduction
+
+In this video, the instructor covers several Python topics, starting with two built-in functions, `dir()` and `help()`, which are used to access information about objects and their methods. The video explains that `dir()` returns a list of an object's methods and attributes, whereas `help()` provides detailed documentation on how to use objects and their methods. The instructor demonstrates how to use both of these functions with various objects, including numbers, strings, and lists.
+
+The video then introduces the concept of docstrings, which are used to document functions, classes, and modules in Python. The instructor explains that a docstring is a string that appears as the first line of a function, class, or module, and it should explain what the function, class, or module does. The video demonstrates how to create a docstring and how to use it with the `help()` function.
+
+Finally, the instructor discusses the use of comments in Python code. The video explains that comments are used to explain code and to make it easier to understand. The instructor shows how to create comments in Python code using the hash symbol (#) and demonstrates how to use them to explain code.
+
+Overall, the video covers several fundamental Python concepts, including the use of built-in functions, docstrings, and comments. The video also provides examples of how to use these concepts in practice.
+
+
+Certainly, I can provide some sample code for you to get started with deep learning. Here is an example of a simple neural network using the Keras library in Python:
+
+```python
+from keras.models import Sequential
+from keras.layers import Dense
+
+# define the model
+model = Sequential()
+model.add(Dense(10, input_dim=8, activation='relu'))
+model.add(Dense(1, activation='sigmoid'))
+
+# compile the model
+model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
+
+# fit the model
+model.fit(X_train, y_train, epochs=100, batch_size=32, validation_data=(X_test, y_test))
+
+# evaluate the model
+scores = model.evaluate(X_test, y_test)
+print("\n%s: %.2f%%" % (model.metrics_names[1], scores[1]*100))
+```
+
+This code defines a neural network with one hidden layer of 10 neurons, an input layer of 8 nodes, and an output layer with a single neuron. The `relu` activation function is used for the hidden layer and `sigmoid` for the output layer. The model is compiled with binary cross-entropy loss and the Adam optimizer, and accuracy is used as a metric. The model is trained for 100 epochs with a batch size of 32 and validated on a test set. Finally, the model's accuracy is evaluated on the test set and printed to the console.
+
+Of course, this is just a simple example to get started with. There are many other types of neural networks and deep learning architectures, as well as a wide range of other libraries and tools available for deep learning. I recommend that you explore more advanced examples and try experimenting with different models and architectures as you continue to learn and develop your skills.

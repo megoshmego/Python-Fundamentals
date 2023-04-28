@@ -1,0 +1,292 @@
+Would you please evaluate the transcript I provide for its key terms, ideas, concepts and their defintions. Would you also please include the video title “Equality Operators”, the subsection title "Python Introduction", and the section title "Python Fundamentals"?
+
+0:00
+(upbeat music)
+0:04
+- Next up, let's talk about equality comparisons.
+0:07
+How do we check if two numbers
+0:09
+or strings are the same.
+0:10
+But then also,
+0:12
+what about more complicated structures like a list,
+0:15
+which if you don't remember from two videos ago,
+0:17
+a list is like an array, but in Python,
+0:20
+so the way that it works in JavaScript
+0:22
+is slightly different.
+0:23
+In Python, we have double equals,
+0:26
+which is just called equals or equality,
+0:29
+we have not equals,
+0:30
+and then we have is and is not,
+0:33
+which are radically different
+0:35
+than the approach in JavaScript.
+0:37
+So to recap, JavaScript,
+0:39
+we have double equals, the loose equality operator,
+0:43
+where type doesn't really matter.
+0:45
+So we could have the number seven,
+0:47
+the string seven,
+0:48
+when we double equals them,
+0:50
+they will be coerced to a common type and compared.
+0:54
+And then we have triple equals,
+0:55
+the strict equality operator,
+0:57
+in JavaScript, which does care about type.
+1:00
+So seven, the number seven,
+1:02
+the string will not be the same.
+1:05
+So most of the time, we use triple equals,
+1:07
+which is a lot of equal signs to type.
+1:10
+And then objects and arrays are only equal
+1:13
+when they have the same identity, meaning they refer
+1:16
+to the same thing in memory, the same reference,
+1:19
+it doesn't matter if their contents look the same.
+1:21
+As we've seen before, if you compare two arrays
+1:24
+that are not actually the exact same reference,
+1:27
+they'll always be false.
+1:30
+Python works a bit differently.
+1:31
+So double equals just the regular equality operator,
+1:35
+we don't call it double equals really, it's just equality,
+1:38
+is going to care about types, unlike JavaScript.
+1:42
+So right out of the box, it's strict about types,
+1:45
+there isn't a loose equality operator in Python.
+1:49
+So if we have two numbers, like one equals one, we get true,
+1:54
+one equals two, we get false.
+1:58
+And if we have one equals one, the number, we now get false.
+2:03
+In JavaScript double equals would give us true,
+2:07
+can always double check that, if we doubt ourselves,
+2:10
+one equals the string one
+2:12
+or the string one double equals the number one.
+2:15
+Both are true.
+2:17
+In Python, that is not the case.
+2:19
+So type matters.
+2:21
+In addition, let's talk about arrays in JavaScript.
+2:25
+As we already mentioned, if you compare them with double
+2:28
+or triple equals, this is always going to be false.
+2:32
+Because these are two completely distinct arrays,
+2:35
+the same contents,
+2:36
+but JavaScript doesn't care.
+2:39
+Versus in Python, if we make a list, not an array,
+2:43
+it looks the same though.
+2:44
+And we do double equals one, two, three.
+2:46
+It doesn't care about the reference,
+2:49
+it doesn't care about the identity,
+2:51
+it's going to look at the contents.
+2:53
+And this is actually really nice, a lot of the times,
+2:55
+it can be really frustrating to try and compare contents
+2:59
+of objects in JavaScript.
+3:01
+In Python, we can compare equality very, very easily.
+3:05
+But what if you did want to check for equality of reference,
+3:09
+what JavaScript is doing with triple equals or
+3:12
+with double equals,
+3:13
+if we wanted equality of reference,
+3:15
+we have a different operator called "is"
+3:19
+like we would use an English, is this object,
+3:23
+this other object.
+3:25
+Object A is the same as object B versus object a,
+3:29
+or list a is equal to list B.
+3:34
+So is quite a bit different
+3:36
+than what we've seen before we have is and is not.
+3:39
+And along those lines, we also have not equal,
+3:41
+we haven't seen that one,
+3:42
+but it works the exact same way.
+3:45
+So we have equality, it does care about type.
+3:48
+And then if we have one not equal one, we get false.
+3:51
+One not equal the string one, we get true,
+3:55
+it's exactly the same, just the opposite.
+3:58
+So back to "is", is going to care about object identity.
+4:03
+So if I had one, two, three is one, two, three,
+4:08
+we get false,
+4:12
+just like we do in JavaScript when we use double
+4:15
+or triple equals,
+4:16
+this is comparing the actual identity of these lists.
+4:19
+So if I use a variable like nums,
+4:23
+nums equals one, two, three.
+4:25
+and then copy equals nums.
+4:28
+These two variables are referring
+4:31
+to the same thing in memory the same reference.
+4:33
+So if I do nums is copy, we get true.
+4:38
+We also have is not, which does not look like this,
+4:42
+with the exclamation point instead we use is not
+4:47
+and this is actually a trend
+4:48
+that we'll expand upon shortly.
+4:50
+There are other operators Boolean logic operators,
+4:53
+like And and Or and Not,
+4:56
+where we write English words instead of symbols
+4:59
+and characters like that or ampersands,
+5:02
+we write the word and.
+5:03
+So is not is the same idea.
+5:06
+It has to do with comparing identity.
+5:09
+So I could check one, two, three is not one, two, three.
+5:14
+They are different references.
+5:16
+So this returns true.
+5:17
+And that's pretty much it.
+5:20
+So a lot of differences between JavaScript and Python
+5:24
+and how these equality operators, these last four work.
+5:27
+First, the most obvious difference is
+5:29
+that we have is and is not which don't exist.
+5:32
+And then there's also differences in
+5:34
+how double equals behaves.
+5:35
+So the syntax looks the same as JavaScript,
+5:39
+where we have two equal signs next to each other,
+5:41
+but it behaves differently.
+5:43
+In Python, double equals are just equality,
+5:46
+cares about type.
+5:47
+In JavaScript, it does not.
+5:49
+We have triple equality in JavaScript,
+5:52
+three equal signs to get strict equality to care about type.
+5:55
+And in JavaScript,
+5:57
+both double and triple equals are not going
+5:59
+to compare the contents of an array
+6:01
+or an object, they are comparing the reference.
+6:04
+In Python, two equal signs behaves closer
+6:07
+to the three strict equality equal signs in JavaScript.
+6:11
+However, it behaves differently in
+6:13
+that it will compare the contents
+6:15
+of data structures like arrays,
+6:17
+which actually aren't arrays, they are called lists.
+6:20
+And then also we have is and is not if we want
+6:24
+to check for object identity.
+6:26
+So what we would do with triple equals in JavaScript
+6:29
+between two arrays we would use is in Python
+6:32
+between two lists.
+6:34
+Okay.
+6:35
+(upbeat music)
