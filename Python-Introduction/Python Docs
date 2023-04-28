@@ -1,1 +1,15 @@
-Would you please evaluate the transcript I provide for its key terms, ideas, concepts and their defintions. Would you also please include the video title “Python Docs”, the subsection title "Python Introduction", and the section title "Python Fundamentals"?
+Key terms/ideas/concepts:
+- Python: A high-level, interpreted programming language known for its simplicity and ease of use.
+- Python versions: Different versions of Python, with Python 2 and Python 3 being the most commonly used.
+- Documentation: Information and resources available for a programming language, such as the Python documentation available on the Python.org website.
+- Python 2 Docs/Python 3 Docs: Two different versions of the Python documentation, with Python 3 Docs being the recommended one for this course.
+- Syntax differences: Differences in the syntax between Python 2 and Python 3, such as the way to print something.
+- Print statement: A command used to display a message on the screen.
+- Parentheses: Symbols used in Python 3 when using the print command, which are not used in Python 2.
+- Toggle: To switch between two different options or modes.
+- Exercises: Practice problems or challenges given to reinforce learning.
+
+Video title: Python Docs
+Section title: Python Fundamentals
+Subsection title: Python Introduction
+
