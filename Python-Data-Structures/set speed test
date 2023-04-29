@@ -1,268 +1,43 @@
-can you please provide code for demonstrations of this
-that would be helpful in preparing for 
-my career as a deep learning AI SWE?
+
+Sure, here's an example of using the `set` data structure in Python to determine the speed difference between searching for an item in a list versus a set:
+
+```
+import random
+import time
+
+# Generate a list of random integers
+my_list = random.sample(range(1000000), 10000)
+
+# Convert the list to a set
+my_set = set(my_list)
+
+# Search for a random integer in the list
+start_time = time.time()
+if 999999 in my_list:
+    print("Item found in list")
+else:
+    print("Item not found in list")
+end_time = time.time()
+print("Search time for list:", end_time - start_time)
+
+# Search for a random integer in the set
+start_time = time.time()
+if 999999 in my_set:
+    print("Item found in set")
+else:
+    print("Item not found in set")
+end_time = time.time()
+print("Search time for set:", end_time - start_time)
+```
+
+In this example, we generate a list of 10,000 random integers and convert it to a set. We then search for a random integer in both the list and the set, and measure the time it takes to perform each search. 
+
+Because sets use hash tables to store their elements, searching for an item in a set is generally much faster than searching for an item in a list, especially for large collections of data. 
+
+By using appropriate data structures, you can significantly improve the speed and efficiency of your code, which is important for building high-performance deep learning models.
 
 
 
-Would you please evaluate the transcript I provide for its key terms, ideas, 
-concepts and their defintions. Would you also please include the video title 
-“set speed test”, the subsection title "Python Data Structures", 
-and the section title "Python Introduction"?
 
 
-0:00
-(upbeat music)
-0:04
-One other important thing about sets,
-0:06
-that I neglected to mention.
-0:07
-Is that they are iterables.
-0:09
-So we can iterate over a set,
-0:12
-We can turn a set into a list.
-0:14
-Let's start with just looping over one of these sets.
-0:17
-So lemon or banana, let's do banana.
-0:20
-So we can do four
-0:21
-adjective
-0:23
-of
-0:24
-excuse me.
-0:25
-In
-0:25
-banana,
-0:27
-we can print adjective.
-0:31
-And if I run that,
-0:32
-we get fruit, sweet, smooth, and yellow.
-0:36
-We also could do the same thing for lemon,
-0:38
-but we could also combine this with one of our operations.
-0:42
-Like if we wanted to do union.
-0:45
-Banana
-0:46
-union lemon.
-0:49
-We now get that full new set that can contains all
-0:52
-of the attributes.
-0:53
-All of the values.
-0:54
-That could even do banana, lemon.
-0:57
-And since
-0:58
-orange is a list.
-1:00
-I could turn it into a set, by doing this set of orange.
-1:06
-There we go,
-1:07
-now we also get orange.
-1:08
-So that the only new addition fruit, bumpy,
-1:11
-yellow, smooth, sweet, sour.
-1:12
-Yup.
-1:13
-Okay.
-1:14
-So that's pretty much it for iterating.
-1:17
-You can turn them back
-1:18
-into a list if you wanted to.
-1:20
-So list of
-1:22
-lemon.
-1:23
-Gives us that.
-1:24
-I could also do list of lemon,
-1:27
-and banana.
-1:29
-If I want to list,
-1:31
-based off of the intersection.
-1:33
-And then the last thing I'll show you here very quickly,
-1:36
-It's just a comparison of speed.
-1:38
-So this is something I found on stack overflow.
-1:40
-I'm not going to go into detail about exactly how it works.
-1:44
-But we have two different approaches,
-1:46
-that are doing the exact same thing.
-1:48
-All that I'm doing here is timing,
-1:50
-using something called timeit.
-1:52
-We're not gonna to talk about that at the moment,
-1:54
-but we're timing how long it takes to do the same thing
-1:57
-in two different ways.
-1:58
-Our goal is to take,
-2:00
-a list of values.
-2:02
-It's a very short one.
-2:03
-It looks like this,
-2:04
-and it happens to have a duplicate.
-2:06
-It has one in there twice.
-2:08
-And what we're doing is removing the duplicates.
-2:12
-So one option would be to manually loop over this list,
-2:16
-and create a new list.
-2:18
-Where we add one in,
-2:19
-and then we add two and then we add three.
-2:21
-And then we get to one and we check,
-2:23
-have we already added one?
-2:25
-And if we have,
-2:25
-then we skip it.
-2:26
-And then we move to seven.
-2:28
-So we could write code to do that,
-2:30
-which is what this function does here,
-2:31
-it doesn't matter how it works.
-2:33
-But it's removing all the duplicates without a set.
-2:37
-Or we could turn it into a set,
-2:39
-which will remove duplicates for us very quickly.
-2:42
-If I come over here
-2:43
-and just do set of,
-2:45
-this list.
-2:48
-It makes us a set.
-2:49
-And then we can turn that back into a list.
-2:52
-Anyway, I'm repeating this 10,000 times
-2:54
-and I'm doing the same thing,
-2:56
-the same exact list.
-2:58
-One, two, three, one,seven,
-2:59
-10,000 times I'm removing the duplicates
-3:02
-and creating a new list.
-3:04
-Using a function that doesn't involve sets.
-3:07
-And we're just going to print out the two execution times.
-3:10
-To do the same thing,
-3:11
-a thousand or 10,000 times.
-3:14
-And if I run this,
-3:16
-by running that file.
-3:18
-This first one is done using sets,
-3:20
-takes point zero zero four seconds.
-3:23
-This one here took about point zero one seconds.
-3:26
-So roughly twice as long to do the exact same thing.
-3:30
-Now, of course we're doing it 10,000 times,
-3:32
-but still that difference is pretty significant.
-3:34
-It's twice as slow,
-3:36
-or let's do it the other way around.
-3:38
-Using a set is twice as fast,
-3:40
-because sets make it very easy.
-3:42
-They are built,
-3:43
-to easily be able to check if a value is already present
-3:47
-in the set.
-3:48
-Compared to lists,
-3:49
-where it's not as easy.
-3:51
-We would have to check every item in the list
-3:52
-to see, if an element is already in the list.
-3:56
-This is something we'll come back to you,
-3:57
-when we talk about big O notation and algorithms
-3:59
-and all that stuff later on.
-4:01
-All right. So just a little diversion there.
-4:02
-The code here does not matter,
-4:04
-I'm gonna to delete it.
-4:05
-Because you don't need to care about timeit,
-4:07
-you don't need to care about any of this stuff.
-4:08
-Other than the fact that,
-4:10
-you should know sets are fast,
-4:12
-but also there are some drawbacks, right?
-4:14
-They're not the same as a list.
-4:15
-They just work well in certain cases.
-4:18
-Okay.
-4:19
-Now we're done with sets.
-4:20
-(upbeat music)
+

@@ -1,343 +1,67 @@
-can you please provide code for demonstrations of this
-that would be helpful in preparing for 
-my career as a deep learning AI SWE?
+Video Title: Sets Intro
+Section Title: Python Introduction
+Subsection Title: Python Data Structures
+
+Key Terms/Concepts:
+- Sets: a data structure in Python that is similar to an array but contains unique, unordered elements that cannot be duplicated.
+- Unique collections: Sets are unique collections of items.
+- Key value pairs: Sets do not use key value pairs.
+- Compatibility: Unlike JavaScript, which has issues with compatibility, Python has access to all needed elements as long as the correct version is being run.
+- Quick: Sets are quick in terms of adding elements, retrieving, and deleting.
+- Use cases: Sets are often used when there is a collection of things that need to be checked against each other, such as a list of banned words or special numbers.
+- Set Literal Syntax: Used to make a new set by using curly braces.
+- Set Constructor Function: Creates a new set from an iterable.
+- Iterable: A collection of items that can be looped over.
+- Immutable: Only immutable types can be added to sets because of hashing. Mutable types cannot be hashed and will cause an error.
+- Hashing: The process of converting a large amount of data into a smaller value.
+- Set methods: Sets have methods that can be used to perform actions on them, such as adding or removing elements. 
+
+Overall, the video provides an introduction to Sets in Python and covers their basic characteristics, use cases, and syntax. It also explains the limitations of sets and the importance of immutable types for hashing. The video lays the foundation for further exploration of set methods and more complex set operations.
+
+Certainly! Here's some code that demonstrates working with sets in Python:
+
+```python
+# Create a set using the curly braces syntax
+languages = {'Ruby', 'Python', 'JavaScript'}
+print(languages) # {'Ruby', 'Python', 'JavaScript'}
+
+# Create a set using the set() constructor
+voted_languages = ['Ruby', 'Python', 'JavaScript', 'Scala', 'Python']
+unique_languages = set(voted_languages)
+print(unique_languages) # {'Ruby', 'Python', 'Scala', 'JavaScript'}
+
+# Create a set using the add() method
+banned_characters = set()
+banned_characters.add('!')
+banned_characters.add('@')
+banned_characters.add('$')
+banned_characters.add('!')
+print(banned_characters) # {'!', '@', '$'}
+
+# Check if an element is in a set using the in keyword
+if 'Python' in unique_languages:
+    print('Python is a voted language!')
+else:
+    print('Python is not a voted language.')
+
+# Remove an element from a set using the remove() method
+unique_languages.remove('Scala')
+print(unique_languages) # {'Ruby', 'Python', 'JavaScript'}
+
+# Iterate over a set using a for loop
+for language in languages:
+    print(language)
+
+# Create a set of mixed types
+mixed_set = {1, 'snake', True, 3.14}
+print(mixed_set) # {1, 'snake', 3.14, True}
+
+# Attempt to add a list to a set (will throw a TypeError)
+my_list = [1, 2, 3]
+languages.add(my_list)
+``` 
+
+I hope this helps in your preparation as a deep learning AI SWE!
 
 
 
-Would you please evaluate the transcript I provide for its key terms, ideas, 
-concepts and their defintions. Would you also please include the video title 
-“sets intro”, the subsection title "Python Data Structures", 
-and the section title "Python Introduction"?
-
-
-(upbeat music)
-0:04
-- [Instructor] Next step another data structure
-0:06
-in Python, Sets.
-0:08
-So we now have Sets in JavaScript.
-0:10
-We didn't always
-0:11
-and we still don't have them in every browser.
-0:14
-You might remember them,
-0:15
-Sets are unique collections of items.
-0:18
-They're like arrays
-0:20
-except that we can't have duplicated elements in there
-0:23
-and they're unordered.
-0:25
-So they're not really like arrays,
-0:27
-they're just a collection.
-0:28
-There's no key value pairs.
-0:30
-It's just a collection of elements that have to be unique.
-0:34
-So unlike JavaScript,
-0:35
-where we have to worry about compatibility
-0:37
-with Python, we have access to whatever we need
-0:40
-as long as we're running the right version.
-0:42
-We're the one who's running the code.
-0:44
-It's not running in a browser.
-0:45
-So Sets are unordered,
-0:48
-they have to be unique,
-0:49
-each element in there has to be unique.
-0:51
-And they're very quick
-0:53
-in terms of adding elements, retrieving and deleting.
-0:56
-So most often, at least in my experience,
-0:59
-I use Sets when I have some collection
-1:02
-of things that I need to check against.
-1:05
-I want to know if some word is a banned word
-1:09
-or if some element, I don't know,
-1:11
-if some number is a special number
-1:14
-that is contained in a Set.
-1:15
-So you could use a list or an array
-1:17
-to achieve the exact same thing
-1:19
-but Sets are always going to be faster
-1:22
-but there are some restrictions.
-1:23
-And we'll talk about that in just a moment.
-1:26
-So as far as making a Set
-1:27
-all we do is use curly braces
-1:30
-like we do to make a dictionary
-1:32
-but we don't add in key value pairs,
-1:33
-we just add in a bunch of values,
-1:36
-individual elements in the Set.
-1:38
-So if I were to make a new Set,
-1:40
-I'll just do this one in line here.
-1:42
-And I Python let's do a Set
-1:44
-of how about languages
-1:48
-and we'll have Ruby, we'll have Python
-1:52
-and we'll have JavaScript.
-1:56
-And we look at languages.
-1:59
-We have a Set.
-1:59
-We could always verify type of languages is a Set.
-2:05
-So if we instead had done key value pairs
-2:07
-with the same curly braces, Python recognizes that pattern
-2:11
-that syntax, and it creates a dictionary.
-2:14
-But when we don't have key value pairs
-2:15
-with the colons, it becomes a Set.
-2:18
-If I tried to make a Set
-2:20
-with duplicated elements like Ruby is in there twice,
-2:24
-we look at languages, it's only been added in once.
-2:27
-We cannot have duplicated elements
-2:30
-and we don't get an error,
-2:31
-it's just not added, just like in JavaScript
-2:34
-when we make a Set.
-2:35
-Although in JavaScript to make a Set,
-2:37
-we have to manually do this new Set
-2:42
-and then pass in some elements
-2:44
-or an iterable, at least in some browsers that support it.
-2:47
-Otherwise, we have to add one element at a time.
-2:50
-In Python, we can use this Set literal syntax,
-2:54
-just like with a list or a dictionary.
-2:57
-We don't have to explicitly call Set,
-3:00
-but we can, we can use the Set constructor function
-3:03
-which will create a new Set from an iterable.
-3:07
-So if I had a list of languages
-3:10
-like what if we have a list of voted languages?
-3:15
-So this is a survey that we sent out
-3:18
-to 20 different developers.
-3:19
-We asked them for their favorite programming languages
-3:22
-and it has a mixture of Ruby and Python and JavaScript
-3:27
-and it also, there has some Scala in there
-3:30
-and there are some duplicates, Ruby, Python.
-3:34
-And since we're learning Python,
-3:35
-let's put Python in there a couple times.
-3:38
-Okay, so we have a list here,
-3:40
-it is not a Set
-3:41
-but I can turn it into a Set just like this.
-3:45
-Set and then inside those prints voted languages.
-3:49
-Now we have a Set that contains the unique elements.
-3:52
-And yes there is an order here
-3:54
-that looks like it's going to be Set in stone,
-3:57
-but the order in a Set does not matter
-4:00
-and it's not something that you should depend on any way.
-4:02
-We have no way of accessing the first element
-4:04
-or the last element or the second or third for that matter.
-4:08
-Another common used case for this Set constructor function.
-4:12
-Well, it's the same use case to create a new Set
-4:14
-from something that is not a Set.
-4:16
-But another thing we can do is pass
-4:17
-in a different sort of an iterable, like a string.
-4:21
-So I could have a collection
-4:22
-of characters, let's say banned characters on my website.
-4:27
-I don't know.
-4:28
-Maybe these are the banned characters I don't know why,
-4:31
-that makes me a new Set.
-4:33
-And if I had duplicates in there,
-4:35
-we don't end up with those duplicates.
-4:37
-We only get one of each item.
-4:39
-Now what can go in a Set?
-4:42
-You might think we could put whatever we want.
-4:44
-Like we could be able to make a new Set.
-4:46
-Let's just make a random Set called things.
-4:49
-And we'll put in a number,
-4:51
-we'll put it in a string,
-4:53
-how about snake and Mario, and then a boolean.
-4:59
-And what about a list one, two, three?
-5:05
-Well, unfortunately we can only use immutable types
-5:09
-just like with dictionaries,
-5:10
-we can only use immutable types
-5:12
-as the keys for a dictionary.
-5:14
-The values can be anything.
-5:16
-In a Set, we can only use a immutable types
-5:18
-and this also has to do with hashing.
-5:21
-If you remember back when I introduced dictionaries
-5:23
-I briefly mentioned this idea
-5:25
-of hashing and hashing functions.
-5:27
-The details don't matter
-5:29
-but the thing that makes Set so fast,
-5:31
-the fact that we're able to add
-5:32
-or check if a value is in a Set
-5:34
-or delete a value in constant time
-5:37
-meaning it doesn't matter if there's a hundred elements
-5:39
-or a thousand or 10,000 elements in a Set.
-5:42
-It will always take roughly the same amount of time,
-5:45
-unlike a list, which will take more time
-5:48
-depending on how many elements are in there
-5:50
-that all has to do with the fact
-5:51
-that elements can be hashed that are added into a Set.
-5:55
-And again, if you don't know what that means,
-5:57
-it doesn't matter.
-5:58
-All you need to know is that the only things
-6:00
-that Python can hash
-6:02
-are immutable elements, immutable values.
-6:05
-So we can put anything that is immutable
-6:07
-but we cannot put dictionaries for example, or lists.
-6:12
-So if I delete that list here, this works fine.
-6:16
-A Set does not have to be one data type.
-6:19
-It doesn't have to be all strings or all numbers.
-6:22
-This is a Set and it has a couple
-6:24
-of different types numbers we've got
-6:26
-well, I guess integers, booleans and strings.
-6:31
-And I think that's a good place to stop.
-6:34
-Next step, we're gonna talk more about Set methods
-6:36
-and things we can do with Sets
-6:38
-but for now just remember Sets are collections of values.
-6:42
-They aren't really ordered, but they are unique.
-6:46
-So every element must be unique in there.
-6:47
-And every element has to be immutable.
-6:50
-So we can not add in mutable data structures
-6:52
-like lists or dictionaries.
-6:55
-We use the curly braces to create a new Set
-6:58
-or we use the Set constructor function
-7:01
-and that's pretty much it.
-7:02
-So next, we'll continue learning about Sets.
-7:04
-(upbeat music)
